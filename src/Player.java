@@ -3,6 +3,10 @@ public class Player {
     int hp;
     int level;
     int attack;
+    int experience;
+    int requiredExp;
+    int gold;
+
 
             Player(String name){
         this.name = name;
