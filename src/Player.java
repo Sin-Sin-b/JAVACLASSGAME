@@ -24,5 +24,9 @@ public class Player {
         System.out.println("------------------------");
     }
 
+    int getAttack(){
+    return attack;
+    }
+
 }
 
