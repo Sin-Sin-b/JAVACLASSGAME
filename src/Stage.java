@@ -12,4 +12,8 @@ public class Stage {
     this.floor = floor;
     this.entryLevel = entryLevel;
     }
+
+
+
+
 }
