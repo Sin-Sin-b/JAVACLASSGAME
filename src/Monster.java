@@ -36,7 +36,7 @@ public class Monster {
         case"언데드 검사":
         return new Monster("언데드 검사","일반",25,120,4,125);
 
-        case"해골 마법사":
+        case"언데드 마법사":
         return new Monster("언데드 마법사","일반",30,80,4,125);
 
         case"언데드 기사":
