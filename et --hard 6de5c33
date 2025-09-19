@@ -1,0 +1,20 @@
+[33m7610eb9[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32m0918[m[33m)[m HEAD@{0}: reset: moving to 7610eb9
+[33m7610eb9[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32m0918[m[33m)[m HEAD@{1}: checkout: moving from master to 0918
+[33m745c7b7[m[33m ([m[1;32mmaster[m[33m)[m HEAD@{2}: checkout: moving from 0918 to master
+[33m7610eb9[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32m0918[m[33m)[m HEAD@{3}: checkout: moving from master to 0918
+[33m745c7b7[m[33m ([m[1;32mmaster[m[33m)[m HEAD@{4}: commit (merge): Merge branch 'master' of https://github.com/Sj-bb/JAVACLASSGAME
+[33m8afcd4a[m[33m ([m[1;32mmasters[m[33m)[m HEAD@{5}: checkout: moving from masters to master
+[33m8afcd4a[m[33m ([m[1;32mmasters[m[33m)[m HEAD@{6}: checkout: moving from master to masters
+[33m8afcd4a[m[33m ([m[1;32mmasters[m[33m)[m HEAD@{7}: reset: moving to HEAD
+[33m8afcd4a[m[33m ([m[1;32mmasters[m[33m)[m HEAD@{8}: commit: 아이템완료
+[33m7610eb9[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32m0918[m[33m)[m HEAD@{9}: checkout: moving from 0918 to master
+[33m7610eb9[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32m0918[m[33m)[m HEAD@{10}: checkout: moving from master to 0918
+[33m7610eb9[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32m0918[m[33m)[m HEAD@{11}: checkout: moving from 0918 to master
+[33m7610eb9[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32m0918[m[33m)[m HEAD@{12}: checkout: moving from master to 0918
+[33m7610eb9[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32m0918[m[33m)[m HEAD@{13}: commit: 아이템완료
+[33m82c9531[m HEAD@{14}: merge origin/master: Merge made by the 'ort' strategy.
+[33m6a6f26a[m HEAD@{15}: commit: 아이템완료
+[33mbe60892[m HEAD@{16}: commit: 아이템완료
+[33mf03960c[m HEAD@{17}: commit: 아이템완료
+[33m836a724[m HEAD@{18}: commit: 아이템완료
+[33m6de5c33[m HEAD@{19}: commit (initial): JAVA TNOVA
