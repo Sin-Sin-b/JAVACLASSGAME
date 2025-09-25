@@ -1,6 +1,19 @@
 import java.util.Scanner;
 public class Game {
+    Player player;
+    SkillList skilllist;
+    ItemList itemlist;
+    StageList stagelist;
     Scanner scanner = new Scanner(System.in);
+    Game() {
+    System.out.println("이름을 입력하십시오.");
+    String name = scanner.next();
+   this.player = new Player(name);
+   this.skilllist = new SkillList();
+   this.itemlist=new ItemList();
+   this.stagelist = new StageList();
+    }
+
   public void run() {
       System.out.println("게임에 오신 것을 환영합니다.");
   while(true) {

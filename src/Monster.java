@@ -1,7 +1,6 @@
 public class Monster {
     String name;
     String type;
-    String rewardItem;
     int attack;
     int hp;
     int level;
