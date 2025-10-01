@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Player {
     String name;
     int hp;
@@ -6,13 +9,15 @@ public class Player {
     int experience;
     int requiredExp;
     int gold;
-
+    List<Item> inventory;
 
             Player(String name){
         this.name = name;
         this.level = 1;
         this.hp = 100;
         this.attack = 10;
+
+        this.inventory = new ArrayList<>();
             }
 
     public void showStat() {
