@@ -6,7 +6,7 @@ Item getHealPotion(){return new Item("회복 포션","본인의 체력을 최대
 
 Item getLeatherArmor(){return new Item("가죽 갑옷","짜임새 좋은 가죽갑옷이다. 체력을 +30 늘려준다.",20,"방어구",0,30,0);}
 
-Item getLeatherHelmet(){return new Item("가죽 갑옷","짜임새 좋은 가죽헬멧이다. 체력을 +30 늘려준다.",20,"방어구",0,30,0);}
+Item getLeatherHelmet(){return new Item("가죽 헬멧","짜임새 좋은 가죽헬멧이다. 체력을 +30 늘려준다.",20,"방어구",0,30,0);}
 
 Item getSteelArmor(){return new Item("강철 갑옷","튼튼한 강철 갑옷이다. 체력을 +50 늘려준다.",30,"방어구",0,50,0);}
 

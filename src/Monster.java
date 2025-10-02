@@ -30,7 +30,7 @@ public class Monster {
         return new Monster("하이오크 궁수","일반",20,40,2,75);
 
         case "하이오크 장군":
-        return new Monster("하이오크 장군","중간보스",70,150,3,200);
+        return new Monster("하이오크 장군","중간보스",40,150,3,200);
 
         case"언데드 검사":
         return new Monster("언데드 검사","일반",25,120,4,125);
@@ -42,7 +42,7 @@ public class Monster {
         return new Monster("언데드 기사","일반",35,200,5,150);
 
         case"언데드 왕":
-        return new Monster("언데드 왕","보스",50,360,5,150);
+        return new Monster("언데드 왕","보스",70,360,5,150);
 
         default:
             System.out.println("알 수 없는 몬스터 이름입니다: " + monsterName + ". 기본 고블린 전사를 생성합니다.");
