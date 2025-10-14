@@ -84,7 +84,7 @@ public class Game {
             // player.gold -= strengthPotion.price;
         } else if (choice == 2) {
             Item healPotion = itemlist.getHealPotion();
-            player.addItemToInventory(healPotion);
+            player.addItemToInventory(healPotion);S
         }
     }
 }
