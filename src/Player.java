@@ -10,6 +10,7 @@ public class Player {
     int needExperience;
     int gold;
     List<Item> inventory;
+    List<Skill> skillset;
 
             Player(String name){
         this.name = name;
@@ -21,6 +22,8 @@ public class Player {
         this.gold = 0;
 
         this.inventory = new ArrayList<>();
+        this.skillset = new ArrayList<>();
+
             }
 
     public void showStat() {
@@ -43,6 +46,28 @@ public class Player {
     void addItemToInventory(Item item) {
         System.out.println(item.name + "을(를) 획득했습니다.");
         this.inventory.add(item);
+    }
+
+    void addcut(Skill skill){
+        this.skillset.add(skill);
+
+    }
+
+
+    void addSkill(Skill skill){
+            System.out.println("새로운 스킬 [" + skill.name + "]을(를) 배웠습니다!");
+            this.skillset.add(skill);
+
+    }
+
+    void showSKill(){
+        System.out.println("------ 스킬 ------");
+        for(int i = 1;i<=skillset.size();i++){
+        Skill skill = skillset.get(i-1);
+        System.out.println(i+". " + skill.name + ": " + skill.description);
+
+        }
+        System.out.println("--------------------");
     }
 
     void showInventory() {
