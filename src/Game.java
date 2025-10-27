@@ -1,5 +1,7 @@
 import java.util.Scanner;
 import java.util.Random;
+import java.util.ArrayList;
+
 public class Game {
     Player player;
     SkillList skilllist;
@@ -104,6 +106,27 @@ public class Game {
         }
 
     }
+    void openShop() {
+        System.out.println("------ 상점 ------");
+        System.out.println("1. 힘의 포션 구매 (10 골드)");
+        System.out.println("2. 회복 포션 구매 (10 골드)");
+        System.out.println("3. 상점 나가기");
+        System.out.print("선택: ");
+
+        int choice = scanner.nextInt();
+        if (choice == 1) {
+
+            Item strengthPotion = itemlist.getStrPotion();
+            player.addItemToInventory(strengthPotion);
+
+
+        }
+        else if (choice == 2) {
+            Item healPotion = itemlist.getHealPotion();
+            player.addItemToInventory(healPotion);
+        }
+    }
+
 
 
     void battleFloor4() {
@@ -200,7 +223,9 @@ public class Game {
 
                     }
                     else{
-                        player.showInventory();
+                    List<Item> usableItems = new ArrayList<>();
+
+
 
                 }
 
@@ -210,25 +235,5 @@ public class Game {
         }
     }
 
-        void openShop() {
-            System.out.println("------ 상점 ------");
-            System.out.println("1. 힘의 포션 구매 (10 골드)");
-            System.out.println("2. 회복 포션 구매 (10 골드)");
-            System.out.println("3. 상점 나가기");
-            System.out.print("선택: ");
-
-            int choice = scanner.nextInt();
-            if (choice == 1) {
-
-                Item strengthPotion = itemlist.getStrPotion();
-                player.addItemToInventory(strengthPotion);
-
-
-            }
-            else if (choice == 2) {
-                Item healPotion = itemlist.getHealPotion();
-                player.addItemToInventory(healPotion);
-            }
-        }
 
     }

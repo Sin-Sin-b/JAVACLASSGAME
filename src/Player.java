@@ -82,6 +82,17 @@ public class Player {
         System.out.println("--------------------");
     }
 
+    void showInventory2(){
+        System.out.println("------ 아이템 ------");
+        for(int i = 1;i<=skillset.size();i++){
+            Item item = inventory.get(i-1);
+            System.out.println(i+". " + item.name + ": " + item.description);
+
+        }
+        System.out.println("--------------------");
+    }
+
+
     void getExperience(int exp) {
         this.experience += exp;
         System.out.println(exp + "의 경험치를 획득했습니다. (현재 경험치: " + this.experience + ")");
@@ -112,6 +123,7 @@ public class Player {
             showStat();
         }
     }
+
     Skill getskill(int number){
 
     return skillset.get(number-1);
