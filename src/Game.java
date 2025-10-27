@@ -6,6 +6,7 @@ public class Game {
     ItemList itemlist;
     StageList stagelist;
     Scanner scanner = new Scanner(System.in);
+    Skill selectSkill;
 
     Game() {
         System.out.println("이름을 입력하십시오 : ");
@@ -128,7 +129,7 @@ public class Game {
 
             Random random = new Random();
 
-            while (player.hp > 0 && monster1.hp > 0 && monster2.hp > 0) {
+            while (player.hp > 0) {
                 System.out.println("전투를 시작합니다");
                 System.out.println("플레이어의 체력 : " + player.hp);
                 System.out.println("고블린 전사의 체력 : " + monster1.hp);
@@ -139,21 +140,71 @@ public class Game {
                 System.out.println("3. 아이템 사용");
 
                 int battlechoice = scanner.nextInt();
+
                 if (battlechoice == 1) {
                     System.out.println("누구를 공격하시겠습니까?");
                     System.out.println("1. 고블린 전사");
                     System.out.println("2. 고블린 궁수");
-                    int battlechoice2 = scanner.nextInt();
-                    if (battlechoice2==1){
-                       monster1.hp-=player.attack;
-                        System.out.println("일반 공격으로" + player.attack + " 데미지를 주었습니다.");
+                    System.out.println("선택 : ");
+                    int monsterchoice = scanner.nextInt();
+                    while (true){
+                        if (monsterchoice == 1) {
+                            monster1.hp -= player.attack;
+                            System.out.println("일반 공격으로" + player.attack + " 데미지를 주었습니다.");
+                            break;
+                        } else if (monsterchoice == 2) {
+                            monster2.hp -= player.attack;
+                            System.out.println("일반 공격으로" + player.attack + " 데미지를 주었습니다.");
+                            break;
+                        } else {
+                            System.out.println("없는 몬스터 입니다.올바른 번호를 입력해주세요.");
+                        }
+                }
+                }
+
+
+                    else if (battlechoice == 2) {
+                    player.showSKill();
+                    System.out.println("몇번 스킬을 사용하시겠습니까?");
+                    int skillchoice = scanner.nextInt();
+                    while (true){
+                        if (skillchoice == 1) {
+                            System.out.println("누구를 공격하시겠습니까?");
+                            System.out.println("1. 고블린 전사");
+                            System.out.println("2. 고블린 궁수");
+                            System.out.println("선택 : ");
+                            int monsterchoice = scanner.nextInt();
+                            while (true){
+                            if (monsterchoice == 1) {
+                                selectSkill = player.getskill(1);
+                                monster1.hp -= player.attack + selectSkill.damage;
+                                System.out.println(selectSkill.name + "를 사용했습니다.");
+                                System.out.println("고블린 전사에게 " + player.attack + selectSkill.damage + "의 데미지를 주었습니다.");
+                                break;
+                            } else if (monsterchoice == 2) {
+                                selectSkill = player.getskill(1);
+                                monster2.hp -= player.attack + selectSkill.damage;
+                                System.out.println(selectSkill.name + "를 사용했습니다.");
+                                System.out.println("고블린 전사에게 " + player.attack + selectSkill.damage + "의 데미지를 주었습니다.");
+                                break;
+                            }
+                            else {
+                                System.out.println("없는 몬스터 입니다.올바른 번호를 입력해주세요.");
+                            }
+                            }
+
+                        } else {
+                            System.out.println("스킬 목록에 없는 번호입니다. 다시 선택해주세요.");
+                        }
+                }
 
                     }
                     else{
-                        monster2.hp-=player.attack;
-                        System.out.println("일반 공격으로" + player.attack + " 데미지를 주었습니다.");
-                    }
+                        player.showInventory();
+
                 }
+
+
             }
 
         }

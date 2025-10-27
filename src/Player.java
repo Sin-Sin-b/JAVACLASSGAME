@@ -112,6 +112,12 @@ public class Player {
             showStat();
         }
     }
+    Skill getskill(int number){
+
+    return skillset.get(number-1);
+
+
+    }
 
 
 }
