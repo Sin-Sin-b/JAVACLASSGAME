@@ -17,8 +17,8 @@ public class Player {
             Player(String name){
         this.name = name;
         this.level = 1;
-        this.fighthp = fullhp;
         this.fullhp = 100;
+        this.fighthp = fullhp;
         this.attack = 10;
         this.fightattack = attack;
         this.experience = 0;
@@ -87,6 +87,14 @@ public class Player {
         void useStrongPotion(){
 
 this.fightattack = this.fightattack * 1.1;
+
+}
+
+void getGold(int gold){
+
+this.gold += gold;
+
+    System.out.println(this.gold + "를 획득했습니다.");
 
 }
 

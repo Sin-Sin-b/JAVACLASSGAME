@@ -1,6 +1,6 @@
 public class SkillList {
 
-Skill cut(){return new Skill("횡베기","대상을 벤다","일반스킬",20,1);}
+Skill cut(){return new Skill("횡베기","대상을 벤다","일반스킬",10,1);}
 
 Skill berserk(){return new Skill("광폭화","체력을 일정량 사용하여 공격력을 증가시킨다.","일반스킬",0,2);}
 
