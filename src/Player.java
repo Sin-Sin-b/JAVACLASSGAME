@@ -3,9 +3,11 @@ import java.util.List;
 
 public class Player {
     String name;
-    int hp;
+    double fullhp;
+    double fighthp;
     int level;
-    int attack;
+    double attack;
+    double fightattack;
     int experience;
     int needExperience;
     int gold;
@@ -15,8 +17,10 @@ public class Player {
             Player(String name){
         this.name = name;
         this.level = 1;
-        this.hp = 100;
+        this.fighthp = fullhp;
+        this.fullhp = 100;
         this.attack = 10;
+        this.fightattack = attack;
         this.experience = 0;
         this.needExperience = 100;
         this.gold = 0;
@@ -30,7 +34,7 @@ public class Player {
         System.out.println("------ 캐릭터 정보 ------");
         System.out.println("이름: " + name);
         System.out.println("레벨: " + level);
-        System.out.println("체력: " + hp);
+        System.out.println("체력: " + fullhp);
         System.out.println("공격력: " + attack);
         System.out.println("현재 경험치: " + experience);
         System.out.println("요구 경험치: " + (needExperience - experience));
@@ -39,9 +43,6 @@ public class Player {
         System.out.println("------------------------");
     }
 
-    int getAttack(){
-    return attack;
-    }
 
     void addItemToInventory(Item item) {
         System.out.println(item.name + "을(를) 획득했습니다.");
@@ -82,16 +83,16 @@ public class Player {
         System.out.println("--------------------");
     }
 
-    void showInventory2(){
-        System.out.println("------ 아이템 ------");
-        for(int i = 1;i<=skillset.size();i++){
-            Item item = inventory.get(i-1);
-            System.out.println(i+". " + item.name + ": " + item.description);
 
-        }
-        System.out.println("--------------------");
-    }
+        void useStrongPotion(){
 
+this.fightattack = this.fightattack * 1.1;
+
+}
+
+void useHpPotion(){
+this.fighthp += this.fullhp*0.2;
+}
 
     void getExperience(int exp) {
         this.experience += exp;
@@ -116,7 +117,7 @@ public class Player {
 
 
             this.attack += 5;
-            this.hp += 30;
+            this.fullhp += 30;
 
             System.out.println(" 레벨 업! ");
             System.out.println("레벨 " + this.level + "이 되었습니다.");

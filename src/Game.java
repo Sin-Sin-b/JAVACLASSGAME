@@ -152,15 +152,16 @@ public class Game {
 
             Random random = new Random();
 
-            while (player.hp > 0) {
+            while (player.fighthp > 0) {
                 System.out.println("전투를 시작합니다");
-                System.out.println("플레이어의 체력 : " + player.hp);
+                System.out.println("플레이어의 체력 : " + player.fighthp);
                 System.out.println("고블린 전사의 체력 : " + monster1.hp);
                 System.out.println("고블린 궁수의 체력 : " + monster2.hp);
                 System.out.println("-- 플레이어턴 -- ");
                 System.out.println("1. 일반 공격");
                 System.out.println("2. 스킬 사용");
                 System.out.println("3. 아이템 사용");
+                System.out.println("선택 : ");
 
                 int battlechoice = scanner.nextInt();
 
@@ -172,12 +173,12 @@ public class Game {
                     int monsterchoice = scanner.nextInt();
                     while (true){
                         if (monsterchoice == 1) {
-                            monster1.hp -= player.attack;
-                            System.out.println("일반 공격으로" + player.attack + " 데미지를 주었습니다.");
+                            monster1.hp -= player.fightattack;
+                            System.out.println("일반 공격으로" + player.fightattack + " 데미지를 주었습니다.");
                             break;
                         } else if (monsterchoice == 2) {
-                            monster2.hp -= player.attack;
-                            System.out.println("일반 공격으로" + player.attack + " 데미지를 주었습니다.");
+                            monster2.hp -= player.fightattack;
+                            System.out.println("일반 공격으로" + player.fightattack + " 데미지를 주었습니다.");
                             break;
                         } else {
                             System.out.println("없는 몬스터 입니다.올바른 번호를 입력해주세요.");
@@ -200,13 +201,13 @@ public class Game {
                             while (true){
                             if (monsterchoice == 1) {
                                 selectSkill = player.getskill(1);
-                                monster1.hp -= player.attack + selectSkill.damage;
+                                monster1.hp -= player.fightattack + selectSkill.damage;
                                 System.out.println(selectSkill.name + "를 사용했습니다.");
                                 System.out.println("고블린 전사에게 " + player.attack + selectSkill.damage + "의 데미지를 주었습니다.");
                                 break;
                             } else if (monsterchoice == 2) {
                                 selectSkill = player.getskill(1);
-                                monster2.hp -= player.attack + selectSkill.damage;
+                                monster2.hp -= player.fightattack + selectSkill.damage;
                                 System.out.println(selectSkill.name + "를 사용했습니다.");
                                 System.out.println("고블린 전사에게 " + player.attack + selectSkill.damage + "의 데미지를 주었습니다.");
                                 break;
@@ -223,7 +224,56 @@ public class Game {
 
                     }
                     else{
-                    List<Item> usableItems = new ArrayList<>();
+                        ArrayList<Item> usableItems = new ArrayList<>();
+                        for (Item item:player.inventory){
+                            if(item.type.equals("회복")||item.type.equals("강화")){
+                                usableItems.add(item);
+                            }
+                        }
+
+                        System.out.println("------ 아이템 ------");
+                        for(int i = 1;i<=usableItems.size();i++){
+                            Item item = usableItems.get(i-1);
+
+                            System.out.println(i+  ". " + item.name + ": " + item.description);
+
+                        }
+                        System.out.println("--------------------");
+
+
+                    System.out.println("어떤 아이템을 사용하시겠습니까?");
+                    boolean use = true;
+
+                        while(use){
+                            System.out.println("선택 : ");
+                            int battlechoice3 = scanner.nextInt();
+
+                         if (battlechoice3>usableItems.size()){
+                             System.out.println("--------------------");
+                             System.out.println("다시 입력해 주십시오.");
+                             System.out.println("선택 : ");
+                         }
+                         else {
+                            Item select = usableItems.get(battlechoice3-1);
+
+                            if (select.type.equals("강화"))
+                            {
+                            player.useStrongPotion();
+                                System.out.println("플레이어의 현재 공격력이 " + player.fightattack + "가 되었습니다.");
+                                usableItems.remove(select);
+                                player.inventory.remove(select);
+                                use = false;
+                            }
+                            else{
+                                player.useHpPotion();
+                                System.out.println("플레이어의 현재 체력이 " + player.fighthp + "가 되었습니다.");
+                                usableItems.remove(select);
+                                player.inventory.remove(select);
+                                use = false;
+                            }
+
+                         }
+                        }
 
 
 
