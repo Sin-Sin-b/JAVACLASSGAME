@@ -278,9 +278,16 @@ public class Game {
                         System.out.println(i + ". " + item.name + ": " + item.description);
 
                     }
+                    System.out.println("--------------------");
+
+                        if (usableItems.isEmpty()){
+                            System.out.println();
+                            System.out.println("목록이 비어있어 사용할 아이템이 없습니다. 전투 선택지로 돌아갑니다.");
+                            continue;
+                        }
 
 
-                        System.out.println("--------------------");
+
                         System.out.println("어떤 아이템을 사용하시겠습니까?");
                         boolean use = true;
                         System.out.println("선택 : ");
