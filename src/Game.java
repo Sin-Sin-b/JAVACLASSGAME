@@ -71,9 +71,10 @@ public class Game {
                     player.showInventory();
                     System.out.println("무엇을 하시겠습니까?");
                     System.out.println("1. 야영지로 돌아간다.");
-                    System.out.println("2. 게임을 종료한다.");
+                    System.out.println("2. 아이템을 장착한다.");
+                    System.out.println("3. 게임을 종료한다.");
                     int choice3 = scanner.nextInt();
-                    if (choice3 == 2)  {
+                    if (choice3 == 3)  {
                         System.out.println("게임을 종료합니다.");
                         return;
                     }
