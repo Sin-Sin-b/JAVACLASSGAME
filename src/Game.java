@@ -146,6 +146,8 @@ public class Game {
     }
 
 
+
+
     void battleFloor4() {
         Stage battlestage = stagelist.floor4();
         System.out.println(battlestage.name + "에 입장 하셨습니다.");

@@ -11,6 +11,8 @@ public class Player {
     int experience;
     int needExperience;
     int gold;
+    Item equippedArmor;
+    Item equippedHelmet;
     List<Item> inventory;
     List<Skill> skillset;
 
@@ -24,6 +26,8 @@ public class Player {
         this.experience = 0;
         this.needExperience = 100;
         this.gold = 0;
+        this.equippedArmor = null;
+        this.equippedHelmet = null;
 
         this.inventory = new ArrayList<>();
         this.skillset = new ArrayList<>();
@@ -39,7 +43,16 @@ public class Player {
         System.out.println("현재 경험치: " + experience);
         System.out.println("요구 경험치: " + (needExperience - experience));
         System.out.println("보유 골드: " + gold);
-
+        if(equippedArmor == null){
+        System.out.println("장착 상의 : 없음");
+        }else{
+            System.out.println("장착 상의 : " + equippedArmor.name);
+        }
+        if(equippedHelmet== null){
+            System.out.println("장착 투구 : 없음");
+        }else{
+            System.out.println("장착 투구 : " + equippedHelmet.name);
+        }
         System.out.println("------------------------");
     }
 
