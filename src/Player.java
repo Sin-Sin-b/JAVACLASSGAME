@@ -112,6 +112,8 @@ this.fighthp += this.fullhp*0.2;
         }
     }
 
+
+
     void levelUp() {
 
         while (this.experience >= this.needExperience) {

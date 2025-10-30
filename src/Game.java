@@ -23,6 +23,9 @@ public class Game {
     public void run() {
         System.out.println("게임에 오신 것을 환영합니다.");
         while (true) {
+            player.fighthp = player.fullhp;
+            player.fightattack = player.attack;
+
 
             System.out.println("\n🏕️ --- 야영지에 도착했습니다 --- 🏕️");
             System.out.println("무엇을 하시겠습니까?");
@@ -326,47 +329,55 @@ public class Game {
 
 
                 }
-                int pattern = random.nextInt(2);
+                int pattern1 = random.nextInt(2);
                 if(monster1.hp>0){
                     System.out.println("-- 몬스터의 턴 -- ");
-                 if (pattern == 0 ){
+                 if (pattern1 == 0 ){
                      player.fighthp-=monster1.attack;
                      System.out.println("고블린 전사가 방패치기를 사용했다.");
                      System.out.println(player.name + "에게 "+ monster1.attack + "데미지를 주었다.");
 
                      if(player.fighthp<=0){
                          System.out.println("플레이어의 hp가 0이 되어 쓰러졌습니다. 야영지로 돌아갑니다.");
+                         break;
                      }
                      System.out.println("--------------------");
                  }
-                 else if(pattern == 1){
+                 else if(pattern1 == 1){
                      player.fighthp-=monster1.attack + 10;
                      System.out.println("고블린 전사가 강타를 사용했다.");
                      System.out.println(player.name + "에게 "+ (monster1.attack+10) + "데미지를 주었다.");
                      if(player.fighthp<=0){
                          System.out.println("플레이어의 hp가 0이 되어 쓰러졌습니다. 야영지로 돌아갑니다.");
+                         break;
                      }
                      System.out.println("--------------------");
                  }
                 }
+
+                int pattern2 = random.nextInt(2);
                 if(monster2.hp>0){
-                    if (pattern == 0 ){
+                    if (pattern2 == 0 ){
                         player.fighthp-=monster2.attack;
                         System.out.println("고블린 궁수가 속사를 사용했다.");
                         System.out.println(player.name + "에게 "+ monster2.attack + "데미지를 주었다.");
 
                         if(player.fighthp<=0){
                             System.out.println("플레이어의 hp가 0이 되어 쓰러졌습니다. 야영지로 돌아갑니다.");
+
+                            break;
                         }
 
                         System.out.println("--------------------");
                     }
-                    else if(pattern == 1){
+                    else if(pattern2 == 1){
                         player.fighthp-=monster2.attack + 10;
                         System.out.println("고블린 궁수가 헤드샷을 사용했다.");
                         System.out.println(player.name + "에게 "+ (monster2.attack+10) + "데미지를 주었다.");
                         if(player.fighthp<=0){
                             System.out.println("플레이어의 hp가 0이 되어 쓰러졌습니다. 야영지로 돌아갑니다.");
+
+                            break;
                         }
                         System.out.println("--------------------");
 
