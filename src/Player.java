@@ -107,7 +107,7 @@ void getGold(int gold){
 
 this.gold += gold;
 
-    System.out.println(this.gold + "를 획득했습니다.");
+    System.out.println(this.gold + "골드를 획득했습니다.");
 
 }
 

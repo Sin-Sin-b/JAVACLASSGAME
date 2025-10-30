@@ -75,12 +75,13 @@ public class Game {
                     System.out.println("무엇을 하시겠습니까?");
                     System.out.println("1. 야영지로 돌아간다.");
                     System.out.println("2. 아이템을 장착한다.");
-                    System.out.println("3. 게임을 종료한다.");
                     int choice3 = scanner.nextInt();
-                    if (choice3 == 3)  {
-                        System.out.println("게임을 종료합니다.");
-                        return;
-                    }
+                    if (choice3 == 2)  {
+                      equipItem();
+                    }else {
+                        System.out.println("야영지로 돌아갑니다.");
+                    break;
+                }
                     break;
 
                 case 4:
@@ -143,6 +144,91 @@ public class Game {
                 break;
             }
         }
+    }
+
+    void equipItem() {
+        // 1. 임시 목록 (장착 가능한 아이템만) 생성
+        ArrayList<Item> equippableItems = new ArrayList<>();
+        for (Item item : player.inventory) {
+            // ItemList에 "방어구"로 되어 있는 아이템을 필터링합니다.
+            if (item.type.equals("방어구")) {
+                equippableItems.add(item);
+            }
+        }
+
+        // 2. 장착할 아이템이 있는지 확인
+        if (equippableItems.isEmpty()) {
+            System.out.println("인벤토리에 장착할 아이템이 없습니다.");
+            return; // 야영지로 돌아갑니다.
+        }
+
+        // 3. 장착 가능한 아이템 목록 보여주기
+        System.out.println("------ 장착할 아이템 선택 ------");
+        for (int i = 0; i < equippableItems.size(); i++) {
+            Item item = equippableItems.get(i);
+            // 아이템의 이름과 효과(getHp)를 같이 보여줍니다.
+            System.out.println((i + 1) + ". " + item.name + " (체력 +" + item.getHp + ")");
+        }
+        System.out.println("0. 취소");
+        System.out.print("선택: ");
+
+        int choice = scanner.nextInt();
+
+
+        if (choice > 0 && choice <= equippableItems.size()) {
+
+            Item selectedItem = equippableItems.get(choice - 1);
+
+
+            if (selectedItem.name.contains("헬멧")) {
+                unequipAndEquip(selectedItem, "helmet");
+            } else if (selectedItem.name.contains("갑옷")) {
+                unequipAndEquip(selectedItem, "armor");
+            }
+
+            // 7. 야영지이므로 전투 체력도 최대 체력과 동기화
+            player.fighthp = player.fullhp;
+
+        } else {
+            System.out.println("장착을 취소합니다. 야영지로 돌아갑니다.");
+        }
+    }
+
+
+
+    void unequipAndEquip(Item newItem, String slot) {
+        Item oldItem = null;
+
+
+        if (slot.equals("helmet")) {
+            oldItem = player.equippedHelmet; //
+        } else if (slot.equals("armor")) {
+            oldItem = player.equippedArmor; //
+        }
+
+
+        if (oldItem != null) {
+            System.out.println(oldItem.name + "을(를) 장착 해제합니다.");
+
+            player.fullhp -= oldItem.getHp;
+
+            player.inventory.add(oldItem);
+        }
+
+
+        if (slot.equals("helmet")) {
+            player.equippedHelmet = newItem;
+        } else if (slot.equals("armor")) {
+            player.equippedArmor = newItem;
+        }
+
+
+        player.fullhp += newItem.getHp;
+
+        player.inventory.remove(newItem);
+
+        System.out.println(newItem.name + "을(를) 장착했습니다.");
+        player.showStat();
     }
 
 
@@ -389,12 +475,12 @@ public class Game {
                 if(monster1.hp==0 && monster2.hp==0){
                     System.out.println("적을 모두 처치했습니다.");
                     int rewardexp = monster1.rewardExp+monster2.rewardExp;
+                    player.addItemToInventory(itemlist.getLeatherArmor());
+                    player.getGold(100);
                     player.getExperience(rewardexp);
                     player.levelUp();
 
 
-                    player.addItemToInventory(itemlist.getLeatherArmor());
-                    player.getGold(100);
 
                  break;
                 }

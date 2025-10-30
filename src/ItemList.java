@@ -12,7 +12,9 @@ Item getSteelArmor(){return new Item("강철 갑옷","튼튼한 강철 갑옷이
 
 Item getSteelHelmet(){return new Item("강철 헬멧","튼튼한 강철 헬멧이다. 체력을 +50 늘려준다.",30,"방어구",0,50,0);}
 
-Item devilStone(){return new Item("붉은 마석","불길한 마석이다.",0,"강화석",0,0,0);}
+Item devilRedStone(){return new Item("붉은 마석","불길한 마석이다.큰 힘이 느껴진다.",0,"1차강화석",0,0,0);}
+
+Item devilBlackStone(){return new Item("검은 마석","불길한 마석이다.거대한 힘이 느껴진다.",0,"2차강화석",0,0,0);}
 
 
 }
