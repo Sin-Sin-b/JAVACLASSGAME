@@ -94,6 +94,7 @@ public class Game {
                 case 6:
                     System.out.println("사용할 마석을 골라주십시오.");
                     player.showDevilstone();
+                    devilStoneUse();
 
                 case 7:
                     System.out.println("게임을 종료합니다.");
