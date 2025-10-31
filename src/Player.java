@@ -16,6 +16,7 @@ public class Player {
     int devilsword;
     List<Item> inventory;
     List<Skill> skillset;
+    List<Item> devilstone;
 
             Player(String name){
         this.name = name;
@@ -33,6 +34,7 @@ public class Player {
 
         this.inventory = new ArrayList<>();
         this.skillset = new ArrayList<>();
+        this.devilstone = new ArrayList<>();
 
             }
 
@@ -64,6 +66,11 @@ public class Player {
     void addItemToInventory(Item item) {
         System.out.println(item.name + "을(를) 획득했습니다.");
         this.inventory.add(item);
+    }
+
+    void addItemToDevilstone(Item item){
+        System.out.println(item.name + "을(를) 획득했습니다.");
+        this.devilstone.add(item);
     }
 
     void addcut(Skill skill){
@@ -98,6 +105,24 @@ public class Player {
             }
         }
         System.out.println("--------------------");
+    }
+
+    void showDevilstone(){
+
+        System.out.println("------ 마석 목록 ------");
+        if (devilstone.isEmpty()){
+            System.out.println("보유 마석이 없습니다.");
+        }
+        else{
+            for (int i = 0; i < devilstone.size(); i++) {
+                Item item = devilstone.get(i);
+
+                System.out.println( (i + 1) + ". " + item.name + ": " + item.description);
+            }
+            System.out.println("--------------------");
+        }
+
+
     }
 
 

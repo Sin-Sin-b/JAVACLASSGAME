@@ -39,10 +39,10 @@ public class Monster {
         return new Monster("언데드 마법사","일반",30,80,4,125);
 
         case"언데드 기사":
-        return new Monster("언데드 기사","일반",35,200,5,150);
+        return new Monster("언데드 기사","중간보스2",55,250,5,150);
 
         case"언데드 왕":
-        return new Monster("언데드 왕","보스",70,360,5,150);
+        return new Monster("언데드 왕","보스",70,360,6,150);
 
         default:
             System.out.println("알 수 없는 몬스터 이름입니다: " + monsterName + ". 기본 고블린 전사를 생성합니다.");
