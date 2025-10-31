@@ -597,7 +597,7 @@ public class Game {
                             int monsterchoice = scanner.nextInt();
                             while (true) {
                                 if (monsterchoice == 1) {
-                                    selectSkill = player.getskill(skillchoice);
+                                    selectSkill = player.getskill(battlechoice);
                                     monster1.hp -= (player.fightattack + selectSkill.damage);
                                     System.out.println(selectSkill.name + "를 사용했습니다.");
                                     System.out.println("하이오크 전사에게 " + (player.fightattack + selectSkill.damage) + "의 데미지를 주었습니다.");
@@ -610,7 +610,7 @@ public class Game {
 
                                     break;
                                 } else if (monsterchoice == 2) {
-                                    selectSkill = player.getskill(skillchoice);
+                                    selectSkill = player.getskill(battlechoice);
                                     monster2.hp -= (player.fightattack + selectSkill.damage);
                                     System.out.println(selectSkill.name + "를 사용했습니다.");
                                     System.out.println("하이오크 궁수에게 " + (player.fightattack + selectSkill.damage) + "의 데미지를 주었습니다.");
@@ -826,7 +826,7 @@ public class Game {
                     while (true) {
                         if (skillchoice == 1) {
 
-                                    selectSkill = player.getskill(skillchoice);
+                                    selectSkill = player.getskill(battlechoice);
                                     monster1.hp -= (player.fightattack + selectSkill.damage);
                                     System.out.println(selectSkill.name + "를 사용했습니다.");
                                     System.out.println("하이오크 장군에게 " + (player.fightattack + selectSkill.damage) + "의 데미지를 주었습니다.");
@@ -858,7 +858,7 @@ public class Game {
 
 
                         }else if (skillchoice == 3){
-                            selectSkill = player.getskill(skillchoice);
+                            selectSkill = player.getskill(battlechoice);
                             monster1.hp -= (player.fightattack + selectSkill.damage);
                             System.out.println(selectSkill.name + "를 사용했습니다.");
                             System.out.println("하이오크 장군에게 " + (player.fightattack + selectSkill.damage) + "의 데미지를 주었습니다.");
