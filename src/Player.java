@@ -128,7 +128,7 @@ public class Player {
 
         void useStrongPotion(){
 
-this.fightattack = this.fightattack * 1.1;
+this.fightattack = this.fightattack * 1.3;
 
 }
 
@@ -141,7 +141,7 @@ this.gold += gold;
 }
 
 void useHpPotion(){
-this.fighthp += this.fullhp*0.2;
+this.fighthp += this.fullhp*0.5;
 }
 
     void getExperience(int exp) {

@@ -1,11 +1,11 @@
 public class ItemList {
 
     Item getStrPotion() {
-        return new Item("힘의 포션", "본인의 공격력을 10% 올려주는 포션이다", 10, "강화", 1.1, 0, 0);
+        return new Item("힘의 포션", "본인의 공격력을 30% 올려주는 포션이다", 10, "강화", 1.3, 0, 0);
     }
 
     Item getHealPotion() {
-        return new Item("회복 포션", "본인의 체력을 최대체력의 20% 회복한다", 10, "회복", 0, 0, 0.2);
+        return new Item("회복 포션", "본인의 체력을 최대체력의 50% 회복한다", 10, "회복", 0, 0, 0.2);
     }
 
     Item getLeatherArmor() {

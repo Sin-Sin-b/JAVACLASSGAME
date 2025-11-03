@@ -55,14 +55,22 @@ public class Game {
                         battleFloor4();
                     } else if (stagechoice == 2) {
                         stagelist.floor5();
+                        battleFloor5();
                     } else if (stagechoice == 3) {
                         stagelist.floor6();
+                        battleFloor6();
                     } else if (stagechoice == 4) {
                         stagelist.floor7();
+                        battleFloor7();
                     } else if (stagechoice == 5) {
                         stagelist.floor8();
+                        battleFloor8();
                     } else {
                         stagelist.floor9();
+                        battleFloor9();
+                        if(battleFloor9() == true){
+                            return;
+                        }
                     }
 
 
@@ -335,9 +343,10 @@ public class Game {
                                 monster2.hp = 0;
                                 System.out.println("고블린 궁수가 쓰러졌습니다.");
                             }
-
+                            break;
                         } else {
                             System.out.println("없는 몬스터 입니다.올바른 번호를 입력해주세요.");
+                            monsterchoice = scanner.nextInt();
                         }
                     }
                 } else if (battlechoice == 2) {
@@ -353,7 +362,7 @@ public class Game {
                             int monsterchoice = scanner.nextInt();
                             while (true) {
                                 if (monsterchoice == 1) {
-                                    selectSkill = player.getskill(1);
+                                    selectSkill = player.getskill(skillchoice);
                                     monster1.hp -= (player.fightattack + selectSkill.damage);
                                     System.out.println(selectSkill.name + "를 사용했습니다.");
                                     System.out.println("고블린 전사에게 " + (player.fightattack + selectSkill.damage) + "의 데미지를 주었습니다.");
@@ -366,7 +375,7 @@ public class Game {
 
                                     break;
                                 } else if (monsterchoice == 2) {
-                                    selectSkill = player.getskill(1);
+                                    selectSkill = player.getskill(skillchoice);
                                     monster2.hp -= (player.fightattack + selectSkill.damage);
                                     System.out.println(selectSkill.name + "를 사용했습니다.");
                                     System.out.println("고블린 궁수에게 " + (player.fightattack + selectSkill.damage) + "의 데미지를 주었습니다.");
@@ -380,11 +389,13 @@ public class Game {
                                     break;
                                 } else {
                                     System.out.println("없는 몬스터 입니다.올바른 번호를 입력해주세요.");
+                                    monsterchoice = scanner.nextInt();
                                 }
                             }
                             break;
                         } else {
                             System.out.println("스킬 목록에 없는 번호입니다. 다시 선택해주세요.");
+                            skillchoice = scanner.nextInt();
                         }
                     }
 
@@ -582,9 +593,10 @@ public class Game {
                                 monster2.hp = 0;
                                 System.out.println("하이오크 궁수가 쓰러졌습니다.");
                             }
-
+                            break;
                         } else {
                             System.out.println("없는 몬스터 입니다.올바른 번호를 입력해주세요.");
+                            monsterchoice = scanner.nextInt();
                         }
                     }
                 } else if (battlechoice == 2) {
@@ -627,6 +639,7 @@ public class Game {
                                     break;
                                 } else {
                                     System.out.println("없는 몬스터 입니다.올바른 번호를 입력해주세요.");
+                                    monsterchoice = scanner.nextInt();
                                 }
                             }
                             break;
@@ -642,6 +655,7 @@ public class Game {
 
                         } else {
                             System.out.println("스킬 목록에 없는 번호입니다. 다시 선택해주세요.");
+                            skillchoice = scanner.nextInt();
                         }
                     }
 
@@ -865,6 +879,7 @@ public class Game {
                             break;
                         } else {
                             System.out.println("스킬 목록에 없는 번호입니다. 다시 선택해주세요.");
+                            skillchoice = scanner.nextInt();
                         }
                     }
 
@@ -1033,9 +1048,10 @@ public class Game {
                                 monster2.hp = 0;
                                 System.out.println("언데드 마법사가 쓰러졌습니다.");
                             }
-
+                            break;
                         } else {
                             System.out.println("없는 몬스터 입니다.올바른 번호를 입력해주세요.");
+                            monsterchoice = scanner.nextInt();
                         }
                     }
                 } else if (battlechoice == 2) {
@@ -1078,6 +1094,7 @@ public class Game {
                                     break;
                                 } else {
                                     System.out.println("없는 몬스터 입니다.올바른 번호를 입력해주세요.");
+                                    monsterchoice = scanner.nextInt();
                                 }
                             }
                             break;
@@ -1126,6 +1143,7 @@ public class Game {
                                     break;
                                 } else {
                                     System.out.println("없는 몬스터 입니다.올바른 번호를 입력해주세요.");
+                                    monsterchoice = scanner.nextInt();
                                 }
                             }
                             break;
@@ -1164,11 +1182,13 @@ public class Game {
                                     break;
                                 } else {
                                     System.out.println("없는 몬스터 입니다.올바른 번호를 입력해주세요.");
+                                    monsterchoice = scanner.nextInt();
                                 }
                             }
                             break;
                         } else {
                             System.out.println("스킬 목록에 없는 번호입니다. 다시 선택해주세요.");
+                            skillchoice = scanner.nextInt();
                         }
                     }
 
@@ -1419,6 +1439,7 @@ public class Game {
                             break;
                         } else {
                             System.out.println("스킬 목록에 없는 번호입니다. 다시 선택해주세요.");
+                            skillchoice = scanner.nextInt();
                         }
                     }
 
@@ -1653,6 +1674,7 @@ public class Game {
                             break;
                         } else {
                             System.out.println("스킬 목록에 없는 번호입니다. 다시 선택해주세요.");
+                            skillchoice = scanner.nextInt();
                         }
                     }
 
@@ -1766,7 +1788,7 @@ public class Game {
 
 
             }
-
+            return false;
         }
     }
 }
