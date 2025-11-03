@@ -1329,7 +1329,7 @@ public class Game {
     }
 
     void battleFloor8() {
-        Stage battlestage = stagelist.floor8();
+        Stage battlestage = stagelist.floor9();
         System.out.println(battlestage.name + "에 입장 하셨습니다.");
         System.out.println();
         System.out.println("입장 레벨 : " + battlestage.entryLevel);
