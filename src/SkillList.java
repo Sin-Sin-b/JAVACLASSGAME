@@ -4,7 +4,7 @@ Skill cut(){return new Skill("횡베기","대상을 벤다","일반스킬",10,1)
 
 Skill berserk(){return new Skill("광폭화","체력 10%를 사용하여 공격력을 30% 증가시킨다.","일반스킬",0,2);}
 
-Skill whirlwind() { return new Skill("휠윈드","회전하여 적을 공격한다(50% 확률로 두명의 적에게 적중한다","일반스킬", 30,3);}
+Skill whirlwind() { return new Skill("휠윈드","회전하여 적을 공격한다","일반스킬", 30,3);}
 
 Skill crush() {return new Skill("분쇄","적에게 강한 일격을 날린다.","일반스킬",45,5);}
 

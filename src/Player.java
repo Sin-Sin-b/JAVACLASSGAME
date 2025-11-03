@@ -69,7 +69,7 @@ public class Player {
     }
 
     void addItemToDevilstone(Item item){
-        System.out.println(item.name + "을(를) 획득했습니다.");
+        System.out.println("★ " + item.name + "을(를) 획득했습니다. ★");
         this.devilstone.add(item);
     }
 
