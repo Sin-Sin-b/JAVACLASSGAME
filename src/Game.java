@@ -51,32 +51,43 @@ public class Game {
                     System.out.println("5. 8층 임원층 - 적정 레벨 5");
                     System.out.println("6. 9층 대표이사 / 이사회층 - 적정 레벨 6");
                     System.out.println("어떤 스테이지로 가시겠습니까?");
-                    int stagechoice = scanner.nextInt();
+
+                    while(true) {
+                        int stagechoice = scanner.nextInt();
                     if (stagechoice == 1) {
                         stagelist.floor4();
                         battleFloor4();
+                        break;
                     } else if (stagechoice == 2) {
                         stagelist.floor5();
                         battleFloor5();
+                        break;
                     } else if (stagechoice == 3) {
                         stagelist.floor6();
                         battleFloor6();
+                        break;
                     } else if (stagechoice == 4) {
                         stagelist.floor7();
                         battleFloor7();
+                        break;
                     } else if (stagechoice == 5) {
                         stagelist.floor8();
                         battleFloor8();
-                    } else {
+                        break;
+                    } else if (stagechoice == 6) {
                         stagelist.floor9();
                         boolean clear = battleFloor9();
-                        if(clear == true){
+                        if (clear == true) {
                             return;
                         }
+                        break;
+                    } else{
+                        System.out.println("올바른 스테이지 번호를 입력해 주십시오.");
                     }
 
-
+                }
                     break;
+
                 case 2:
                     openShop();
 
@@ -124,6 +135,7 @@ public class Game {
 
         while (true) {
             System.out.println("------ 상점 ------");
+            System.out.println("보유골드 : "+ player.gold );
             System.out.println("1. 힘의 포션 구매 (10 골드)");
             System.out.println("2. 회복 포션 구매 (10 골드)");
             System.out.println("3. 상점 나가기");
@@ -1329,7 +1341,7 @@ public class Game {
     }
 
     void battleFloor8() {
-        Stage battlestage = stagelist.floor9();
+        Stage battlestage = stagelist.floor8();
         System.out.println(battlestage.name + "에 입장 하셨습니다.");
         System.out.println();
         System.out.println("입장 레벨 : " + battlestage.entryLevel);
@@ -1551,7 +1563,7 @@ public class Game {
     }
 
     boolean battleFloor9() {
-        Stage battlestage = stagelist.floor8();
+        Stage battlestage = stagelist.floor9();
         System.out.println(battlestage.name + "에 입장 하셨습니다.");
         System.out.println();
         System.out.println("입장 레벨 : " + battlestage.entryLevel);
