@@ -1535,7 +1535,7 @@ public class Game {
         if (player.level < battlestage.entryLevel) {
 
             System.out.println("적정 레벨이 아닙니다. 야영지로 돌아갑니다.");
-
+            return false;
 
         } else {
             System.out.println();
@@ -1726,7 +1726,7 @@ public class Game {
 
                         if (player.fighthp <= 0) {
                             System.out.println("플레이어의 hp가 0이 되어 쓰러졌습니다. 야영지로 돌아갑니다.");
-                            break;
+                            return false;
                         }
                         System.out.println("--------------------");
                     } else if (pattern1 == 1) {
@@ -1735,7 +1735,7 @@ public class Game {
                         System.out.println(player.name + "에게 " + (monster1.attack + 50) + "데미지를 주었다.");
                         if (player.fighthp <= 0) {
                             System.out.println("플레이어의 hp가 0이 되어 쓰러졌습니다. 야영지로 돌아갑니다.");
-                            break;
+                            return false;
                         }
                         System.out.println("--------------------");
                     }
@@ -1751,7 +1751,7 @@ public class Game {
                     System.out.println("9층 대표이사 집무실의 거대한 창 밖으로,");
                     System.out.println("어둠에 가려져 있던 도시의 햇살이 눈부시게 비추기 시작합니다.");
                     System.out.println();
-                    System.out.println("4층부터 9층까지, 이 건물을 뒤덮었던 모든 마물들이 먼지처럼 소멸합니다.");
+                    System.out.println("4층부터 9층까지, 이 건물을 뒤덮었던 모든 마물들이 먼지가 되어 소멸합니다.");
                     System.out.println();
                     System.out.println(player.name + "님, 당신은 마침내 이 빌딩의 평화를 되찾았습니다.");
                     System.out.println("축하합니다. 모든 시련을 이겨냈습니다.");
