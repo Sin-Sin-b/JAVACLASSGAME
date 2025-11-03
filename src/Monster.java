@@ -39,7 +39,7 @@ public class Monster {
         return new Monster("언데드 마법사","일반",30,80,4,125);
 
         case"언데드 기사":
-        return new Monster("언데드 기사","중간보스2",55,250,5,150);
+        return new Monster("언데드 기사","중간보스2",55,250,5,300);
 
         case"언데드 왕":
         return new Monster("언데드 왕","보스",70,360,6,150);
