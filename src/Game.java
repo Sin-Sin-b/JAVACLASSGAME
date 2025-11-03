@@ -143,12 +143,13 @@ public class Game {
             }
         }
     }
-    void devilStoneUse(){
 
-        ArrayList <Item> usabledevilstones = new ArrayList<>();
+    void devilStoneUse() {
+
+        ArrayList<Item> usabledevilstones = new ArrayList<>();
         for (Item item : player.devilstone) {
 
-            if (item.type.equals("1차강화석")||item.type.equals("2차강화석")) {
+            if (item.type.equals("1차강화석") || item.type.equals("2차강화석")) {
                 usabledevilstones.add(item);
             }
         }
@@ -157,28 +158,28 @@ public class Game {
             return;
         }
         System.out.println("------ 사용할 아이템 선택 ------");
-        for (int i = 0 ; i<usabledevilstones.size();i++) {
+        for (int i = 0; i < usabledevilstones.size(); i++) {
             Item item = usabledevilstones.get(i);
-            System.out.println((i+1) + ". " + item.name);
+            System.out.println((i + 1) + ". " + item.name);
 
         }
         System.out.println("0. 취소");
         System.out.print("선택: ");
-        int choice=scanner.nextInt();
+        int choice = scanner.nextInt();
 
-        if(choice>0 && usabledevilstones.size()<=choice){
-            Item selecteditem = usabledevilstones.get(choice-1);
-            if (selecteditem.type.equals("1차강화석")){
+        if (choice > 0 && usabledevilstones.size() <= choice) {
+            Item selecteditem = usabledevilstones.get(choice - 1);
+            if (selecteditem.type.equals("1차강화석")) {
 
-            player.addSkill(skilllist.ruinousWave());
-            player.devilstone.remove(selecteditem);
+                player.addSkill(skilllist.ruinousWave());
+                player.devilstone.remove(selecteditem);
                 System.out.println("'파멸의 검기' 스킬을(를) 획득했습니다.");
 
-            }else{
+            } else {
 
                 player.addSkill(skilllist.demonic());
                 player.devilstone.remove(selecteditem);
-                System.out.println( "'마신화' 스킬을(를) 획득했습니다.");
+                System.out.println("'마신화' 스킬을(를) 획득했습니다.");
             }
 
 
@@ -630,15 +631,13 @@ public class Game {
                             }
                             break;
                         } else if (skillchoice == 2) {
-                                player.fightattack = player.fightattack*1.3;
-                                player.fighthp-= player.fullhp*0.1;
+                            player.fightattack = player.fightattack * 1.3;
+                            player.fighthp -= player.fullhp * 0.1;
 
                             System.out.println("체력이 10% 감소해 " + player.fighthp + "이(가) 되었습니다.");
                             System.out.println("공격력이 30% 증가해" + player.fightattack + "이(가) 되었습니다.");
 
                             break;
-
-
 
 
                         } else {
@@ -791,7 +790,8 @@ public class Game {
 
         } else {
             System.out.println();
-            Monster monster1 = Monster.create("하이오크 장군");;
+            Monster monster1 = Monster.create("하이오크 장군");
+            ;
 
             System.out.println(monster1.name + "이 생성되었습니다.");
 
@@ -812,54 +812,21 @@ public class Game {
 
                 if (battlechoice == 1) {
 
-                            monster1.hp -= player.fightattack;
-                            System.out.println("일반 공격으로" + player.fightattack + " 데미지를 주었습니다.");
+                    monster1.hp -= player.fightattack;
+                    System.out.println("일반 공격으로" + player.fightattack + " 데미지를 주었습니다.");
 
-                            if (monster1.hp <= 0) {
-                                monster1.hp = 0;
-                                System.out.println("하이오크 장군이 쓰러졌습니다.");
-                            }
+                    if (monster1.hp <= 0) {
+                        monster1.hp = 0;
+                        System.out.println("하이오크 장군이 쓰러졌습니다.");
+                    }
 
-                        }
-                else if (battlechoice == 2) {
+                } else if (battlechoice == 2) {
                     player.showSKill();
                     System.out.println("몇번 스킬을 사용하시겠습니까?");
                     int skillchoice = scanner.nextInt();
                     while (true) {
                         if (skillchoice == 1) {
 
-                                    selectSkill = player.getskill(skillchoice);
-                                    monster1.hp -= (player.fightattack + selectSkill.damage);
-                                    System.out.println(selectSkill.name + "를 사용했습니다.");
-                                    System.out.println("하이오크 장군에게 " + (player.fightattack + selectSkill.damage) + "의 데미지를 주었습니다.");
-
-                                    if (monster1.hp <= 0) {
-                                        monster1.hp = 0;
-                                        System.out.println("하이오크 장군이 쓰러졌습니다.");
-                                    }
-
-
-                                    break;
-                                }
-
-
-                         else if (skillchoice == 2) {
-                            player.fightattack = player.fightattack*1.3;
-                            player.fighthp-= player.fullhp*0.1;
-
-                            System.out.println("체력이 10% 감소해 " + player.fighthp + "이(가) 되었습니다.");
-                            System.out.println("공격력이 30% 증가해" + player.fightattack + "이(가) 되었습니다.");
-
-
-
-
-
-                            break;
-
-
-
-
-                        }else if (skillchoice == 3){
                             selectSkill = player.getskill(skillchoice);
                             monster1.hp -= (player.fightattack + selectSkill.damage);
                             System.out.println(selectSkill.name + "를 사용했습니다.");
@@ -872,9 +839,31 @@ public class Game {
 
 
                             break;
-                        }
+                        } else if (skillchoice == 2) {
+                            player.fightattack = player.fightattack * 1.3;
+                            player.fighthp -= player.fullhp * 0.1;
 
-                         else {
+                            System.out.println("체력이 10% 감소해 " + player.fighthp + "이(가) 되었습니다.");
+                            System.out.println("공격력이 30% 증가해" + player.fightattack + "이(가) 되었습니다.");
+
+
+                            break;
+
+
+                        } else if (skillchoice == 3) {
+                            selectSkill = player.getskill(skillchoice);
+                            monster1.hp -= (player.fightattack + selectSkill.damage);
+                            System.out.println(selectSkill.name + "를 사용했습니다.");
+                            System.out.println("하이오크 장군에게 " + (player.fightattack + selectSkill.damage) + "의 데미지를 주었습니다.");
+
+                            if (monster1.hp <= 0) {
+                                monster1.hp = 0;
+                                System.out.println("하이오크 장군이 쓰러졌습니다.");
+                            }
+
+
+                            break;
+                        } else {
                             System.out.println("스킬 목록에 없는 번호입니다. 다시 선택해주세요.");
                         }
                     }
@@ -965,7 +954,6 @@ public class Game {
                 }
 
 
-
                 if (monster1.hp == 0) {
                     System.out.println("적을 모두 처치했습니다.");
                     int rewardexp = monster1.rewardExp;
@@ -982,6 +970,7 @@ public class Game {
 
         }
     }
+
     void battleFloor7() {
         Stage battlestage = stagelist.floor7();
         System.out.println(battlestage.name + "에 입장 하셨습니다.");
@@ -1093,8 +1082,8 @@ public class Game {
                             }
                             break;
                         } else if (skillchoice == 2) {
-                            player.fightattack = player.fightattack*1.3;
-                            player.fighthp-= player.fullhp*0.1;
+                            player.fightattack = player.fightattack * 1.3;
+                            player.fighthp -= player.fullhp * 0.1;
 
                             System.out.println("체력이 10% 감소해 " + player.fighthp + "이(가) 되었습니다.");
                             System.out.println("공격력이 30% 증가해" + player.fightattack + "이(가) 되었습니다.");
@@ -1102,9 +1091,7 @@ public class Game {
                             break;
 
 
-
-
-                        }else if (skillchoice == 3){
+                        } else if (skillchoice == 3) {
                             System.out.println("누구를 공격하시겠습니까?");
                             System.out.println("1. 언데드 검사");
                             System.out.println("2. 언데드 마법사");
@@ -1142,7 +1129,7 @@ public class Game {
                                 }
                             }
                             break;
-                        }else if (skillchoice == 4){
+                        } else if (skillchoice == 4) {
                             System.out.println("누구를 공격하시겠습니까?");
                             System.out.println("1. 언데드 검사");
                             System.out.println("2. 언데드 마법사");
@@ -1180,9 +1167,7 @@ public class Game {
                                 }
                             }
                             break;
-                        }
-
-                         else {
+                        } else {
                             System.out.println("스킬 목록에 없는 번호입니다. 다시 선택해주세요.");
                         }
                     }
@@ -1277,7 +1262,7 @@ public class Game {
                     if (pattern2 == 0) {
                         player.fighthp -= monster2.attack;
                         System.out.println("언데드 마법사가 전격 화살을 사용했다.");
-                        System.out.println(player.name + "에게 " +  monster2.attack + "데미지를 주었다.");
+                        System.out.println(player.name + "에게 " + monster2.attack + "데미지를 주었다.");
 
                         if (player.fighthp <= 0) {
                             System.out.println("플레이어의 hp가 0이 되어 쓰러졌습니다. 야영지로 돌아갑니다.");
@@ -1318,6 +1303,7 @@ public class Game {
 
         }
     }
+
     void battleFloor8() {
         Stage battlestage = stagelist.floor8();
         System.out.println(battlestage.name + "에 입장 하셨습니다.");
@@ -1332,7 +1318,8 @@ public class Game {
 
         } else {
             System.out.println();
-            Monster monster1 = Monster.create("언데드 기사");;
+            Monster monster1 = Monster.create("언데드 기사");
+            ;
 
             System.out.println(monster1.name + "이 생성되었습니다.");
 
@@ -1361,8 +1348,7 @@ public class Game {
                         System.out.println("언데드 기사가 쓰러졌습니다.");
                     }
 
-                }
-                else if (battlechoice == 2) {
+                } else if (battlechoice == 2) {
                     player.showSKill();
                     System.out.println("몇번 스킬을 사용하시겠습니까?");
                     int skillchoice = scanner.nextInt();
@@ -1381,26 +1367,18 @@ public class Game {
 
 
                             break;
-                        }
-
-
-                        else if (skillchoice == 2) {
-                            player.fightattack = player.fightattack*1.3;
-                            player.fighthp-= player.fullhp*0.1;
+                        } else if (skillchoice == 2) {
+                            player.fightattack = player.fightattack * 1.3;
+                            player.fighthp -= player.fullhp * 0.1;
 
                             System.out.println("체력이 10% 감소해 " + player.fighthp + "이(가) 되었습니다.");
                             System.out.println("공격력이 30% 증가해" + player.fightattack + "이(가) 되었습니다.");
 
 
-
-
-
                             break;
 
 
-
-
-                        }else if (skillchoice == 3){
+                        } else if (skillchoice == 3) {
                             selectSkill = player.getskill(skillchoice);
                             monster1.hp -= (player.fightattack + selectSkill.damage);
                             System.out.println(selectSkill.name + "를 사용했습니다.");
@@ -1413,7 +1391,7 @@ public class Game {
 
 
                             break;
-                        }else if (skillchoice == 4){
+                        } else if (skillchoice == 4) {
                             selectSkill = player.getskill(skillchoice);
                             monster1.hp -= (player.fightattack + selectSkill.damage);
                             System.out.println(selectSkill.name + "를 사용했습니다.");
@@ -1426,7 +1404,7 @@ public class Game {
 
 
                             break;
-                        }else if (skillchoice == 5){
+                        } else if (skillchoice == 5) {
                             selectSkill = player.getskill(skillchoice);
                             monster1.hp -= (player.fightattack + selectSkill.damage);
                             System.out.println(selectSkill.name + "를 사용했습니다.");
@@ -1439,11 +1417,7 @@ public class Game {
 
 
                             break;
-                        }
-
-
-
-                        else {
+                        } else {
                             System.out.println("스킬 목록에 없는 번호입니다. 다시 선택해주세요.");
                         }
                     }
@@ -1514,7 +1488,7 @@ public class Game {
                     if (pattern1 == 0) {
                         player.fighthp -= monster1.attack + 10;
                         System.out.println("언데드 기사가 죽음의 숨결을 사용했다.");
-                        System.out.println(player.name + "에게 " + monster1.attack + 10+ "데미지를 주었다.");
+                        System.out.println(player.name + "에게 " + monster1.attack + 10 + "데미지를 주었다.");
 
                         if (player.fighthp <= 0) {
                             System.out.println("플레이어의 hp가 0이 되어 쓰러졌습니다. 야영지로 돌아갑니다.");
@@ -1534,7 +1508,6 @@ public class Game {
                 }
 
 
-
                 if (monster1.hp == 0) {
                     System.out.println("적을 모두 처치했습니다.");
                     int rewardexp = monster1.rewardExp;
@@ -1551,7 +1524,8 @@ public class Game {
 
         }
     }
-    void battleFloor9() {
+
+    boolean battleFloor9() {
         Stage battlestage = stagelist.floor8();
         System.out.println(battlestage.name + "에 입장 하셨습니다.");
         System.out.println();
@@ -1565,7 +1539,8 @@ public class Game {
 
         } else {
             System.out.println();
-            Monster monster1 = Monster.create("언데드 왕");;
+            Monster monster1 = Monster.create("언데드 왕");
+            ;
 
             System.out.println(monster1.name + "이 생성되었습니다.");
 
@@ -1594,8 +1569,7 @@ public class Game {
                         System.out.println("언데드 왕이 쓰러졌습니다.");
                     }
 
-                }
-                else if (battlechoice == 2) {
+                } else if (battlechoice == 2) {
                     player.showSKill();
                     System.out.println("몇번 스킬을 사용하시겠습니까?");
                     int skillchoice = scanner.nextInt();
@@ -1614,26 +1588,18 @@ public class Game {
 
 
                             break;
-                        }
-
-
-                        else if (skillchoice == 2) {
-                            player.fightattack = player.fightattack*1.3;
-                            player.fighthp-= player.fullhp*0.1;
+                        } else if (skillchoice == 2) {
+                            player.fightattack = player.fightattack * 1.3;
+                            player.fighthp -= player.fullhp * 0.1;
 
                             System.out.println("체력이 10% 감소해 " + player.fighthp + "이(가) 되었습니다.");
                             System.out.println("공격력이 30% 증가해" + player.fightattack + "이(가) 되었습니다.");
 
 
-
-
-
                             break;
 
 
-
-
-                        }else if (skillchoice == 3){
+                        } else if (skillchoice == 3) {
                             selectSkill = player.getskill(skillchoice);
                             monster1.hp -= (player.fightattack + selectSkill.damage);
                             System.out.println(selectSkill.name + "를 사용했습니다.");
@@ -1646,7 +1612,7 @@ public class Game {
 
 
                             break;
-                        }else if (skillchoice == 4){
+                        } else if (skillchoice == 4) {
                             selectSkill = player.getskill(skillchoice);
                             monster1.hp -= (player.fightattack + selectSkill.damage);
                             System.out.println(selectSkill.name + "를 사용했습니다.");
@@ -1659,7 +1625,7 @@ public class Game {
 
 
                             break;
-                        }else if (skillchoice == 5){
+                        } else if (skillchoice == 5) {
                             selectSkill = player.getskill(skillchoice);
                             monster1.hp -= (player.fightattack + selectSkill.damage);
                             System.out.println(selectSkill.name + "를 사용했습니다.");
@@ -1672,8 +1638,7 @@ public class Game {
 
 
                             break;
-                        }
-                        else if (skillchoice == 6){
+                        } else if (skillchoice == 6) {
                             selectSkill = player.getskill(skillchoice);
                             monster1.hp -= (player.fightattack + selectSkill.damage);
                             System.out.println(selectSkill.name + "를 사용했습니다.");
@@ -1686,11 +1651,7 @@ public class Game {
 
 
                             break;
-                        }
-
-
-
-                        else {
+                        } else {
                             System.out.println("스킬 목록에 없는 번호입니다. 다시 선택해주세요.");
                         }
                     }
@@ -1759,9 +1720,9 @@ public class Game {
                 if (monster1.hp > 0) {
                     System.out.println("-- 몬스터의 턴 -- ");
                     if (pattern1 == 0) {
-                        player.fighthp -= monster1.attack + 10;
-                        System.out.println("언데드 기사가 죽음의 숨결을 사용했다.");
-                        System.out.println(player.name + "에게 " + monster1.attack + 10+ "데미지를 주었다.");
+                        player.fighthp -= monster1.attack + 25;
+                        System.out.println("언데드 왕이 영원한 안식처를 사용했다.");
+                        System.out.println(player.name + "에게 " + monster1.attack + 25 + "데미지를 주었다.");
 
                         if (player.fighthp <= 0) {
                             System.out.println("플레이어의 hp가 0이 되어 쓰러졌습니다. 야영지로 돌아갑니다.");
@@ -1769,9 +1730,9 @@ public class Game {
                         }
                         System.out.println("--------------------");
                     } else if (pattern1 == 1) {
-                        player.fighthp -= monster1.attack + 30;
-                        System.out.println("언데드 기사가 공간 베기를 사용했다.");
-                        System.out.println(player.name + "에게 " + (monster1.attack + 30) + "데미지를 주었다.");
+                        player.fighthp -= monster1.attack + 50;
+                        System.out.println("언데드 왕이 파멸의 일격을 사용했다.");
+                        System.out.println(player.name + "에게 " + (monster1.attack + 50) + "데미지를 주었다.");
                         if (player.fighthp <= 0) {
                             System.out.println("플레이어의 hp가 0이 되어 쓰러졌습니다. 야영지로 돌아갑니다.");
                             break;
@@ -1781,14 +1742,26 @@ public class Game {
                 }
 
 
-
                 if (monster1.hp == 0) {
-                    System.out.println("보스를 처치했습니다.");
-                    System.out.println("");
-                    System.out.println("건물의 모든 보스를 처치하여 안전이 확보되었습니다.");
+                    System.out.println("....................");
+                    System.out.println("...!");
+                    System.out.println("언데드 왕이 기분 나쁜 비명과 함께 육중한 소리를 내며 무너집니다.");
+                    System.out.println("왕을 지탱하던 불길한 어둠의 마력이 폭풍처럼 휘몰아치다... 이내 잠잠해집니다.");
+                    System.out.println();
+                    System.out.println("9층 대표이사 집무실의 거대한 창 밖으로,");
+                    System.out.println("어둠에 가려져 있던 도시의 햇살이 눈부시게 비추기 시작합니다.");
+                    System.out.println();
+                    System.out.println("4층부터 9층까지, 이 건물을 뒤덮었던 모든 마물들이 먼지처럼 소멸합니다.");
+                    System.out.println();
+                    System.out.println(player.name + "님, 당신은 마침내 이 빌딩의 평화를 되찾았습니다.");
+                    System.out.println("축하합니다. 모든 시련을 이겨냈습니다.");
+                    System.out.println();
+                    System.out.println("==================");
+                    System.out.println("   GAME CLEAR   ");
+                    System.out.println("==================");
+                    System.out.println();
 
-
-                    break;
+                     return true;
                 }
 
 
