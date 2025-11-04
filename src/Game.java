@@ -369,29 +369,41 @@ public class Game {
                 } else if (battlechoice == 2) {
                     player.showSKill();
                     System.out.println("몇번 스킬을 사용하시겠습니까?");
-                    int skillchoice = scanner.nextInt();
-                    Skill selectedSkill = player.getskill(skillchoice);
-                    if (selectedSkill.damage > 0) {
+                    while (true) {
+                        int skillchoice = scanner.nextInt();
 
-                        System.out.println("누구를 공격하시겠습니까?");
-                        System.out.println("1. "+ monster1.name);
-                        System.out.println("2. "+ monster2.name);
-                        System.out.println("선택 : ");
-                        int monsterchoice = scanner.nextInt();
 
-                        Monster targetMonster = null;
-                        if(monsterchoice == 1) {
-                            targetMonster = monster1;
-                        } else if (monsterchoice == 2) {
-                            targetMonster = monster2;
+                        if (skillchoice > 0 && skillchoice <= player.skillset.size()) {
+
+
+                            Skill selectedSkill = player.getskill(skillchoice);
+
+                            if (selectedSkill.damage > 0) {
+                                System.out.println("누구를 공격하시겠습니까?");
+                                System.out.println("1. "+ monster1.name);
+                                System.out.println("2. "+ monster2.name);
+                                System.out.println("선택 : ");
+                                int monsterchoice = scanner.nextInt();
+
+                                Monster targetMonster = null;
+                                if(monsterchoice == 1) {
+                                    targetMonster = monster1;
+                                } else if (monsterchoice == 2) {
+                                    targetMonster = monster2;
+                                }
+                                player.useSkill(selectedSkill, targetMonster);
+
+                            } else {
+
+                                player.useSkill(selectedSkill, null);
+                            }
+
+                            break;
+
+                        } else {
+
+                            System.out.println("스킬 목록에 없는 번호입니다. 다시 선택해주세요.");
                         }
-
-
-                        player.useSkill(selectedSkill, targetMonster);
-
-                    } else {
-
-                        player.useSkill(selectedSkill, null);
                     }
 
                 } else {
@@ -556,29 +568,41 @@ public class Game {
                 } else if (battlechoice == 2) {
                     player.showSKill();
                     System.out.println("몇번 스킬을 사용하시겠습니까?");
-                    int skillchoice = scanner.nextInt();
-                    Skill selectedSkill = player.getskill(skillchoice);
-                    if (selectedSkill.damage > 0) {
+                    while (true) {
+                        int skillchoice = scanner.nextInt();
 
-                        System.out.println("누구를 공격하시겠습니까?");
-                        System.out.println("1. "+ monster1.name);
-                        System.out.println("2. "+ monster2.name);
-                        System.out.println("선택 : ");
-                        int monsterchoice = scanner.nextInt();
 
-                        Monster targetMonster = null;
-                        if(monsterchoice == 1) {
-                            targetMonster = monster1;
-                        } else if (monsterchoice == 2) {
-                            targetMonster = monster2;
+                        if (skillchoice > 0 && skillchoice <= player.skillset.size()) {
+
+
+                            Skill selectedSkill = player.getskill(skillchoice);
+
+                            if (selectedSkill.damage > 0) {
+                                System.out.println("누구를 공격하시겠습니까?");
+                                System.out.println("1. "+ monster1.name);
+                                System.out.println("2. "+ monster2.name);
+                                System.out.println("선택 : ");
+                                int monsterchoice = scanner.nextInt();
+
+                                Monster targetMonster = null;
+                                if(monsterchoice == 1) {
+                                    targetMonster = monster1;
+                                } else if (monsterchoice == 2) {
+                                    targetMonster = monster2;
+                                }
+                                player.useSkill(selectedSkill, targetMonster);
+
+                            } else {
+
+                                player.useSkill(selectedSkill, null);
+                            }
+
+                            break;
+
+                        } else {
+
+                            System.out.println("스킬 목록에 없는 번호입니다. 다시 선택해주세요.");
                         }
-
-
-                        player.useSkill(selectedSkill, targetMonster);
-
-                    } else {
-
-                        player.useSkill(selectedSkill, null);
                     }
                 } else {
                     ArrayList<Item> usableItems = new ArrayList<>();
@@ -717,19 +741,34 @@ public class Game {
                 } else if (battlechoice == 2) {
                     player.showSKill();
                     System.out.println("몇번 스킬을 사용하시겠습니까?");
-                    int skillchoice = scanner.nextInt();
-                    Skill selectedSkill = player.getskill(skillchoice);
-                    if (selectedSkill.damage > 0) {
+                    while (true) {
+                        int skillchoice = scanner.nextInt();
 
 
-                        Monster targetMonster = monster1;
-                        player.useSkill(selectedSkill, targetMonster);
+                        if (skillchoice > 0 && skillchoice <= player.skillset.size()) {
 
-                    } else {
 
-                        player.useSkill(selectedSkill, null);
+                            Skill selectedSkill = player.getskill(skillchoice);
+
+                            if (selectedSkill.damage > 0) {
+
+
+
+                                    Monster targetMonster = monster1;
+                                player.useSkill(selectedSkill, targetMonster);
+
+                            } else {
+
+                                player.useSkill(selectedSkill, null);
+                            }
+
+                            break;
+
+                        } else {
+
+                            System.out.println("스킬 목록에 없는 번호입니다. 다시 선택해주세요.");
+                        }
                     }
-
                 } else {
                     ArrayList<Item> usableItems = new ArrayList<>();
                     for (Item item : player.inventory) {
@@ -884,29 +923,41 @@ public class Game {
                 } else if (battlechoice == 2) {
                     player.showSKill();
                     System.out.println("몇번 스킬을 사용하시겠습니까?");
-                    int skillchoice = scanner.nextInt();
-                    Skill selectedSkill = player.getskill(skillchoice);
-                    if (selectedSkill.damage > 0) {
+                    while (true) {
+                        int skillchoice = scanner.nextInt();
 
-                        System.out.println("누구를 공격하시겠습니까?");
-                        System.out.println("1. "+ monster1.name);
-                        System.out.println("2. "+ monster2.name);
-                        System.out.println("선택 : ");
-                        int monsterchoice = scanner.nextInt();
 
-                        Monster targetMonster = null;
-                        if(monsterchoice == 1) {
-                            targetMonster = monster1;
-                        } else if (monsterchoice == 2) {
-                            targetMonster = monster2;
+                        if (skillchoice > 0 && skillchoice <= player.skillset.size()) {
+
+
+                            Skill selectedSkill = player.getskill(skillchoice);
+
+                            if (selectedSkill.damage > 0) {
+                                System.out.println("누구를 공격하시겠습니까?");
+                                System.out.println("1. "+ monster1.name);
+                                System.out.println("2. "+ monster2.name);
+                                System.out.println("선택 : ");
+                                int monsterchoice = scanner.nextInt();
+
+                                Monster targetMonster = null;
+                                if(monsterchoice == 1) {
+                                    targetMonster = monster1;
+                                } else if (monsterchoice == 2) {
+                                    targetMonster = monster2;
+                                }
+                                player.useSkill(selectedSkill, targetMonster);
+
+                            } else {
+
+                                player.useSkill(selectedSkill, null);
+                            }
+
+                            break;
+
+                        } else {
+
+                            System.out.println("스킬 목록에 없는 번호입니다. 다시 선택해주세요.");
                         }
-
-
-                        player.useSkill(selectedSkill, targetMonster);
-
-                    } else {
-
-                        player.useSkill(selectedSkill, null);
                     }
 
                 } else {
@@ -1045,18 +1096,33 @@ public class Game {
                 } else if (battlechoice == 2) {
                     player.showSKill();
                     System.out.println("몇번 스킬을 사용하시겠습니까?");
-                    int skillchoice = scanner.nextInt();
-                    Skill selectedSkill = player.getskill(skillchoice);
-                    if (selectedSkill.damage > 0) {
+                    while (true) {
+                        int skillchoice = scanner.nextInt();
 
 
-                            Monster targetMonster = monster1;
+                        if (skillchoice > 0 && skillchoice <= player.skillset.size()) {
 
-                        player.useSkill(selectedSkill, targetMonster);
 
-                    } else {
+                            Skill selectedSkill = player.getskill(skillchoice);
 
-                        player.useSkill(selectedSkill, null);
+                            if (selectedSkill.damage > 0) {
+
+
+
+                                Monster targetMonster = monster1;
+                                player.useSkill(selectedSkill, targetMonster);
+
+                            } else {
+
+                                player.useSkill(selectedSkill, null);
+                            }
+
+                            break;
+
+                        } else {
+
+                            System.out.println("스킬 목록에 없는 번호입니다. 다시 선택해주세요.");
+                        }
                     }
                 } else {
                     ArrayList<Item> usableItems = new ArrayList<>();
@@ -1188,18 +1254,33 @@ public class Game {
                 } else if (battlechoice == 2) {
                     player.showSKill();
                     System.out.println("몇번 스킬을 사용하시겠습니까?");
-                    int skillchoice = scanner.nextInt();
-                    Skill selectedSkill = player.getskill(skillchoice);
-                    if (selectedSkill.damage > 0) {
+                    while (true) {
+                        int skillchoice = scanner.nextInt();
 
 
-                        Monster targetMonster = monster1;
+                        if (skillchoice > 0 && skillchoice <= player.skillset.size()) {
 
-                        player.useSkill(selectedSkill, targetMonster);
 
-                    } else {
+                            Skill selectedSkill = player.getskill(skillchoice);
 
-                        player.useSkill(selectedSkill, null);
+                            if (selectedSkill.damage > 0) {
+
+
+
+                                Monster targetMonster = monster1;
+                                player.useSkill(selectedSkill, targetMonster);
+
+                            } else {
+
+                                player.useSkill(selectedSkill, null);
+                            }
+
+                            break;
+
+                        } else {
+
+                            System.out.println("스킬 목록에 없는 번호입니다. 다시 선택해주세요.");
+                        }
                     }
 
                 } else {
