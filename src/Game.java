@@ -130,6 +130,11 @@ public class Game {
         }
 
     }
+    void usegold(int money){
+
+        player.gold -= money;
+
+    }
 
     void openShop() {
 
@@ -147,6 +152,7 @@ public class Game {
                 if (player.gold >= 10) {
                     Item strengthPotion = itemlist.getStrPotion();
                     player.addItemToInventory(strengthPotion);
+                    usegold(10);
                 } else {
                     System.out.println("골드가 부족합니다.");
                 }
@@ -156,6 +162,7 @@ public class Game {
                 if (player.gold >= 10) {
                     Item healPotion = itemlist.getHealPotion();
                     player.addItemToInventory(healPotion);
+                    usegold(10);
                 } else {
                     System.out.println("골드가 부족합니다.");
                 }
@@ -231,7 +238,7 @@ public class Game {
         for (int i = 0; i < equippableItems.size(); i++) {
             Item item = equippableItems.get(i);
 
-            System.out.println((i + 1) + ". " + item.name + " (체력 +" + item.getHp + ")");
+            System.out.println((i + 1) + ". " + item.name + " (체력 +" + item.addedHp + ")");
         }
         System.out.println("0. 취소");
         System.out.print("선택: ");
@@ -273,7 +280,7 @@ public class Game {
         if (oldItem != null) {
             System.out.println(oldItem.name + "을(를) 장착 해제합니다.");
 
-            player.fullhp -= oldItem.getHp;
+            player.fullhp -= oldItem.addedHp;
 
             player.inventory.add(oldItem);
         }
@@ -286,7 +293,7 @@ public class Game {
         }
 
 
-        player.fullhp += newItem.getHp;
+        player.fullhp += newItem.addedHp;
 
         player.inventory.remove(newItem);
 

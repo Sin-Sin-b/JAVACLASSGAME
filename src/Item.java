@@ -3,17 +3,17 @@ public class Item {
     String description;
     int price;
     String type;
-    double getAttack;
-    int getHp;
-    double healHp;
+    double attackMultiplier;
+    int addedHp;
+    double healedHp;
 
- Item(String name,String description,int price, String type,double getAttack,int getHp,double healHp){
+ Item(String name,String description,int price, String type,double attackMultiplier,int addedHp,double healedHp){
     this.name = name;
     this.description = description;
     this.price = price;
     this.type = type;
-    this.getAttack = getAttack;
-    this.getHp = getHp;
-    this.healHp = healHp;
+    this.attackMultiplier = attackMultiplier;
+    this.addedHp = addedHp;
+    this.healedHp = healedHp;
  }
 }
