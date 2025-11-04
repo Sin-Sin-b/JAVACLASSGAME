@@ -13,7 +13,7 @@ public class Player {
     int gold;
     Item equippedArmor;
     Item equippedHelmet;
-    int devilsword;
+    int devilswordLevel;
     List<Item> inventory;
     List<Skill> skillset;
     List<Item> devilstone;
@@ -30,7 +30,7 @@ public class Player {
         this.gold = 0;
         this.equippedArmor = null;
         this.equippedHelmet = null;
-       this.devilsword = 0;
+       this.devilswordLevel = 0;
 
         this.inventory = new ArrayList<>();
         this.skillset = new ArrayList<>();
@@ -47,7 +47,7 @@ public class Player {
         System.out.println("현재 경험치: " + experience);
         System.out.println("요구 경험치: " + (needExperience - experience));
         System.out.println("보유 골드: " + gold);
-        System.out.println("마검 강화: " +  devilsword + "단계" );
+        System.out.println("마검 강화: " +  devilswordLevel + "단계" );
 
         if(equippedArmor == null){
         System.out.println("장착 상의 : 없음");
