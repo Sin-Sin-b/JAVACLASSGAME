@@ -29,7 +29,7 @@ public class Monster {
         }
     }
 
-   void goblinattackPlayer(Player targetPlayer) {
+   void goblinAttackPlayer(Player targetPlayer) {
 
         if (this.hp > 0) {
             System.out.println("-- " + this.name + "의 턴 --");

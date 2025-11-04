@@ -454,57 +454,16 @@ public class Game {
 
 
                 }
-                int pattern1 = random.nextInt(2);
-                if (monster1.hp > 0) {
-                    System.out.println("-- 몬스터의 턴 -- ");
-                    if (pattern1 == 0) {
-                        player.fighthp -= monster1.attack;
-                        System.out.println("고블린 전사가 방패치기를 사용했다.");
-                        System.out.println(player.name + "에게 " + monster1.attack + "데미지를 주었다.");
+                monster1.goblinAttackPlayer(player);
 
-                        if (player.fighthp <= 0) {
-                            System.out.println("플레이어의 hp가 0이 되어 쓰러졌습니다. 야영지로 돌아갑니다.");
-                            break;
-                        }
-                        System.out.println("--------------------");
-                    } else if (pattern1 == 1) {
-                        player.fighthp -= monster1.attack + 10;
-                        System.out.println("고블린 전사가 강타를 사용했다.");
-                        System.out.println(player.name + "에게 " + (monster1.attack + 10) + "데미지를 주었다.");
-                        if (player.fighthp <= 0) {
-                            System.out.println("플레이어의 hp가 0이 되어 쓰러졌습니다. 야영지로 돌아갑니다.");
-                            break;
-                        }
-                        System.out.println("--------------------");
-                    }
+
+                if (player.fighthp > 0) {
+                    monster2.goblinAttackPlayer(player);
                 }
 
-                int pattern2 = random.nextInt(2);
-                if (monster2.hp > 0) {
-                    if (pattern2 == 0) {
-                        player.fighthp -= monster2.attack;
-                        System.out.println("고블린 궁수가 속사를 사용했다.");
-                        System.out.println(player.name + "에게 " + monster2.attack + "데미지를 주었다.");
 
-                        if (player.fighthp <= 0) {
-                            System.out.println("플레이어의 hp가 0이 되어 쓰러졌습니다. 야영지로 돌아갑니다.");
-
-                            break;
-                        }
-
-                        System.out.println("--------------------");
-                    } else if (pattern2 == 1) {
-                        player.fighthp -= monster2.attack + 10;
-                        System.out.println("고블린 궁수가 헤드샷을 사용했다.");
-                        System.out.println(player.name + "에게 " + (monster2.attack + 10) + "데미지를 주었다.");
-                        if (player.fighthp <= 0) {
-                            System.out.println("플레이어의 hp가 0이 되어 쓰러졌습니다. 야영지로 돌아갑니다.");
-
-                            break;
-                        }
-                        System.out.println("--------------------");
-
-                    }
+                if (player.fighthp <= 0) {
+                    break;
                 }
 
                 if (monster1.hp == 0 && monster2.hp == 0) {
@@ -681,59 +640,16 @@ public class Game {
 
 
                 }
-                int pattern1 = random.nextInt(2);
-                if (monster1.hp > 0) {
-                    System.out.println("-- 몬스터의 턴 -- ");
-                    if (pattern1 == 0) {
-                        player.fighthp -= monster1.attack;
-                        System.out.println("하이오크 전사가 내려치기를 사용했다.");
-                        System.out.println(player.name + "에게 " + monster1.attack + "데미지를 주었다.");
+                monster1.highOakAttackPlayer(player);
 
-                        System.out.println("======================================");
 
-                        if (player.fighthp <= 0) {
-                            System.out.println("플레이어의 hp가 0이 되어 쓰러졌습니다. 야영지로 돌아갑니다.");
-                            break;
-                        }
-                        System.out.println("--------------------");
-                    } else if (pattern1 == 1) {
-                        player.fighthp -= monster1.attack + 10;
-                        System.out.println("하이오크 전사가 휠 윈드를 사용했다.");
-                        System.out.println(player.name + "에게 " + (monster1.attack + 15) + "데미지를 주었다.");
-                        if (player.fighthp <= 0) {
-                            System.out.println("플레이어의 hp가 0이 되어 쓰러졌습니다. 야영지로 돌아갑니다.");
-                            break;
-                        }
-                        System.out.println("--------------------");
-                    }
+                if (player.fighthp > 0) {
+                    monster2.highOakAttackPlayer(player);
                 }
 
-                int pattern2 = random.nextInt(2);
-                if (monster2.hp > 0) {
-                    if (pattern2 == 0) {
-                        player.fighthp -= monster2.attack;
-                        System.out.println("하이오크 궁수가 화살비를 사용했다.");
-                        System.out.println(player.name + "에게 " + monster2.attack + "데미지를 주었다.");
-
-                        if (player.fighthp <= 0) {
-                            System.out.println("플레이어의 hp가 0이 되어 쓰러졌습니다. 야영지로 돌아갑니다.");
-
-                            break;
-                        }
-
-                        System.out.println("--------------------");
-                    } else if (pattern2 == 1) {
-                        player.fighthp -= monster2.attack + 10;
-                        System.out.println("하이오크 궁수가 포인트 샷을 사용했다.");
-                        System.out.println(player.name + "에게 " + (monster2.attack + 15) + "데미지를 주었다.");
-                        if (player.fighthp <= 0) {
-                            System.out.println("플레이어의 hp가 0이 되어 쓰러졌습니다. 야영지로 돌아갑니다.");
-
-                            break;
-                        }
-                        System.out.println("--------------------");
-
-                    }
+                // 턴이 끝난 후 플레이어가 죽었는지 최종 확인
+                if (player.fighthp <= 0) {
+                    break; // 전투 종료
                 }
 
                 if (monster1.hp == 0 && monster2.hp == 0) {
@@ -874,29 +790,10 @@ public class Game {
 
 
                 }
-                int pattern1 = random.nextInt(2);
-                if (monster1.hp > 0) {
-                    System.out.println("-- 몬스터의 턴 -- ");
-                    if (pattern1 == 0) {
-                        player.fighthp -= monster1.attack;
-                        System.out.println("하이오크 장군이 내려치기를 사용했다.");
-                        System.out.println(player.name + "에게 " + monster1.attack + "데미지를 주었다.");
+                monster1.highOakLeaderAttackPlayer(player);
 
-                        if (player.fighthp <= 0) {
-                            System.out.println("플레이어의 hp가 0이 되어 쓰러졌습니다. 야영지로 돌아갑니다.");
-                            break;
-                        }
-                        System.out.println("--------------------");
-                    } else if (pattern1 == 1) {
-                        player.fighthp -= monster1.attack + 10;
-                        System.out.println("하이오크 장군이 대지의 일격을 사용했다.");
-                        System.out.println(player.name + "에게 " + (monster1.attack + 30) + "데미지를 주었다.");
-                        if (player.fighthp <= 0) {
-                            System.out.println("플레이어의 hp가 0이 되어 쓰러졌습니다. 야영지로 돌아갑니다.");
-                            break;
-                        }
-                        System.out.println("--------------------");
-                    }
+                if (player.fighthp <= 0) {
+                    break;
                 }
 
 
@@ -1072,57 +969,14 @@ public class Game {
 
 
                 }
-                int pattern1 = random.nextInt(2);
-                if (monster1.hp > 0) {
-                    System.out.println("-- 몬스터의 턴 -- ");
-                    if (pattern1 == 0) {
-                        player.fighthp -= monster1.attack;
-                        System.out.println("언데드 검사가 벼락검을 사용했다.");
-                        System.out.println(player.name + "에게 " + monster1.attack + "데미지를 주었다.");
+                monster1.undeadAttackPlayer(player);
 
-                        if (player.fighthp <= 0) {
-                            System.out.println("플레이어의 hp가 0이 되어 쓰러졌습니다. 야영지로 돌아갑니다.");
-                            break;
-                        }
-                        System.out.println("--------------------");
-                    } else if (pattern1 == 1) {
-                        player.fighthp -= monster1.attack + 20;
-                        System.out.println("언데드 검사가 검기를 사용했다.");
-                        System.out.println(player.name + "에게 " + (monster1.attack + 20) + "데미지를 주었다.");
-                        if (player.fighthp <= 0) {
-                            System.out.println("플레이어의 hp가 0이 되어 쓰러졌습니다. 야영지로 돌아갑니다.");
-                            break;
-                        }
-                        System.out.println("--------------------");
-                    }
+                if (player.fighthp > 0) {
+                    monster2.undeadAttackPlayer(player);
                 }
 
-                int pattern2 = random.nextInt(2);
-                if (monster2.hp > 0) {
-                    if (pattern2 == 0) {
-                        player.fighthp -= monster2.attack;
-                        System.out.println("언데드 마법사가 전격을 사용했다.");
-                        System.out.println(player.name + "에게 " + monster2.attack + "데미지를 주었다.");
-
-                        if (player.fighthp <= 0) {
-                            System.out.println("플레이어의 hp가 0이 되어 쓰러졌습니다. 야영지로 돌아갑니다.");
-
-                            break;
-                        }
-
-                        System.out.println("--------------------");
-                    } else if (pattern2 == 1) {
-                        player.fighthp -= monster2.attack + 20;
-                        System.out.println("언데드 마법사가 에너지 볼트을 사용했다.");
-                        System.out.println(player.name + "에게 " + (monster2.attack + 20) + "데미지를 주었다.");
-                        if (player.fighthp <= 0) {
-                            System.out.println("플레이어의 hp가 0이 되어 쓰러졌습니다. 야영지로 돌아갑니다.");
-
-                            break;
-                        }
-                        System.out.println("--------------------");
-
-                    }
+                if (player.fighthp <= 0) {
+                    break;
                 }
 
                 if (monster1.hp == 0 && monster2.hp == 0) {
@@ -1264,29 +1118,10 @@ public class Game {
 
 
                 }
-                int pattern1 = random.nextInt(2);
-                if (monster1.hp > 0) {
-                    System.out.println("-- 몬스터의 턴 -- ");
-                    if (pattern1 == 0) {
-                        player.fighthp -= monster1.attack + 10;
-                        System.out.println("언데드 기사가 죽음의 숨결을 사용했다.");
-                        System.out.println(player.name + "에게 " + (monster1.attack + 10) + "데미지를 주었다.");
+                monster1.undeadLeaderAttackPlayer(player);
 
-                        if (player.fighthp <= 0) {
-                            System.out.println("플레이어의 hp가 0이 되어 쓰러졌습니다. 야영지로 돌아갑니다.");
-                            break;
-                        }
-                        System.out.println("--------------------");
-                    } else if (pattern1 == 1) {
-                        player.fighthp -= monster1.attack + 30;
-                        System.out.println("언데드 기사가 공간 베기를 사용했다.");
-                        System.out.println(player.name + "에게 " + (monster1.attack + 30) + "데미지를 주었다.");
-                        if (player.fighthp <= 0) {
-                            System.out.println("플레이어의 hp가 0이 되어 쓰러졌습니다. 야영지로 돌아갑니다.");
-                            break;
-                        }
-                        System.out.println("--------------------");
-                    }
+                if (player.fighthp <= 0) {
+                    break;
                 }
 
 
@@ -1427,29 +1262,10 @@ public class Game {
 
 
                 }
-                int pattern1 = random.nextInt(2);
-                if (monster1.hp > 0) {
-                    System.out.println("-- 몬스터의 턴 -- ");
-                    if (pattern1 == 0) {
-                        player.fighthp -= monster1.attack + 25;
-                        System.out.println("언데드 왕이 영원한 안식처를 사용했다.");
-                        System.out.println(player.name + "에게 " + (monster1.attack + 25) + "데미지를 주었다.");
+                monster1.undeadKingAttackPlayer(player);
 
-                        if (player.fighthp <= 0) {
-                            System.out.println("플레이어의 hp가 0이 되어 쓰러졌습니다. 야영지로 돌아갑니다.");
-                            return false;
-                        }
-                        System.out.println("--------------------");
-                    } else if (pattern1 == 1) {
-                        player.fighthp -= monster1.attack + 50;
-                        System.out.println("언데드 왕이 파멸의 일격을 사용했다.");
-                        System.out.println(player.name + "에게 " + (monster1.attack + 50) + "데미지를 주었다.");
-                        if (player.fighthp <= 0) {
-                            System.out.println("플레이어의 hp가 0이 되어 쓰러졌습니다. 야영지로 돌아갑니다.");
-                            return false;
-                        }
-                        System.out.println("--------------------");
-                    }
+                if (player.fighthp <= 0) {
+                    return false;
                 }
 
 
