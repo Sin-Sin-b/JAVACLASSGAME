@@ -522,8 +522,8 @@ public class Game {
 
             while (player.fighthp > 0) {
                 System.out.println("플레이어의 체력 : " + player.fighthp);
-                System.out.println("하이오크 전사의 체력 : " + monster1.hp);
-                System.out.println("하이오크 궁수의 체력 : " + monster2.hp);
+                System.out.println(monster1.name + "의 체력 : " + monster1.hp);
+                System.out.println(monster2.name + "의 체력 : " + monster2.hp);
                 System.out.println("-- 플레이어턴 -- ");
                 System.out.println("1. 일반 공격");
                 System.out.println("2. 스킬 사용");
@@ -535,8 +535,8 @@ public class Game {
 
                 if (battlechoice == 1) {
                     System.out.println("누구를 공격하시겠습니까?");
-                    System.out.println("1. 하이오크 전사");
-                    System.out.println("2. 하이오크 궁수");
+                    System.out.println("1. "+monster1.name);
+                    System.out.println("2. "+monster2.name);
                     System.out.println("선택 : ");
                     int monsterchoice = scanner.nextInt();
                     while (true) {
@@ -546,7 +546,7 @@ public class Game {
 
                             if (monster1.hp <= 0) {
                                 monster1.hp = 0;
-                                System.out.println("하이오크 전사가 쓰러졌습니다.");
+                                System.out.println(monster1.name+"가 쓰러졌습니다.");
                             }
 
 
@@ -557,7 +557,7 @@ public class Game {
 
                             if (monster2.hp <= 0) {
                                 monster2.hp = 0;
-                                System.out.println("하이오크 궁수가 쓰러졌습니다.");
+                                System.out.println(monster2.name + "가 쓰러졌습니다.");
                             }
                             break;
                         } else {
@@ -718,7 +718,7 @@ public class Game {
 
             while (player.fighthp > 0) {
                 System.out.println("플레이어의 체력 : " + player.fighthp);
-                System.out.println("하이오크 장군의 체력 : " + monster1.hp);
+                System.out.println(monster1. name + "의 체력 : " + monster1.hp);
                 System.out.println("-- 플레이어턴 -- ");
                 System.out.println("1. 일반 공격");
                 System.out.println("2. 스킬 사용");
@@ -735,7 +735,7 @@ public class Game {
 
                     if (monster1.hp <= 0) {
                         monster1.hp = 0;
-                        System.out.println("하이오크 장군이 쓰러졌습니다.");
+                        System.out.println(monster1.name + "이 쓰러졌습니다.");
                     }
 
                 } else if (battlechoice == 2) {
@@ -877,8 +877,8 @@ public class Game {
 
             while (player.fighthp > 0) {
                 System.out.println("플레이어의 체력 : " + player.fighthp);
-                System.out.println("언데드 검사의 체력 : " + monster1.hp);
-                System.out.println("언데드 마법사의 체력 : " + monster2.hp);
+                System.out.println(monster1.name + "의 체력 : " + monster1.hp);
+                System.out.println(monster2.name  + "의 체력 : " + monster2.hp);
                 System.out.println("-- 플레이어턴 -- ");
                 System.out.println("1. 일반 공격");
                 System.out.println("2. 스킬 사용");
@@ -890,8 +890,8 @@ public class Game {
 
                 if (battlechoice == 1) {
                     System.out.println("누구를 공격하시겠습니까?");
-                    System.out.println("1. 언데드 검사");
-                    System.out.println("2. 언데드 마법사");
+                    System.out.println("1. " + monster1.name );
+                    System.out.println("2. " + monster2.name );
                     System.out.println("선택 : ");
                     int monsterchoice = scanner.nextInt();
                     while (true) {
@@ -901,7 +901,7 @@ public class Game {
 
                             if (monster1.hp <= 0) {
                                 monster1.hp = 0;
-                                System.out.println("언데드 검사가 쓰러졌습니다.");
+                                System.out.println(monster1.name  + "가 쓰러졌습니다.");
                             }
 
 
@@ -912,7 +912,7 @@ public class Game {
 
                             if (monster2.hp <= 0) {
                                 monster2.hp = 0;
-                                System.out.println("언데드 마법사가 쓰러졌습니다.");
+                                System.out.println(monster2.name + "가 쓰러졌습니다.");
                             }
                             break;
                         } else {
@@ -1073,7 +1073,7 @@ public class Game {
 
             while (player.fighthp > 0) {
                 System.out.println("플레이어의 체력 : " + player.fighthp);
-                System.out.println("언데드 기사의 체력 : " + monster1.hp);
+                System.out.println(monster1.name  + "의 체력 : " + monster1.hp);
                 System.out.println("-- 플레이어턴 -- ");
                 System.out.println("1. 일반 공격");
                 System.out.println("2. 스킬 사용");
@@ -1090,7 +1090,7 @@ public class Game {
 
                     if (monster1.hp <= 0) {
                         monster1.hp = 0;
-                        System.out.println("언데드 기사가 쓰러졌습니다.");
+                        System.out.println(monster1.name + "가 쓰러졌습니다.");
                     }
 
                 } else if (battlechoice == 2) {
@@ -1231,7 +1231,7 @@ public class Game {
 
             while (player.fighthp > 0) {
                 System.out.println("플레이어의 체력 : " + player.fighthp);
-                System.out.println("언데드 왕의 체력 : " + monster1.hp);
+                System.out.println(monster1.name + "의 체력 : " + monster1.hp);
                 System.out.println("-- 플레이어턴 -- ");
                 System.out.println("1. 일반 공격");
                 System.out.println("2. 스킬 사용");
@@ -1248,7 +1248,7 @@ public class Game {
 
                     if (monster1.hp <= 0) {
                         monster1.hp = 0;
-                        System.out.println("언데드 왕이 쓰러졌습니다.");
+                        System.out.println(monster1.name + "이 쓰러졌습니다.");
                     }
 
                 } else if (battlechoice == 2) {

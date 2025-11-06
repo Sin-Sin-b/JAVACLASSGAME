@@ -25,6 +25,7 @@ public class ItemList {
     }
 
     Item getdevilRedStone() {
+
         return new Item("붉은 마석", "불길한 마석이다.큰 힘이 느껴진다.", 0, "1차강화석", 0, 0, 0);
     }
 
