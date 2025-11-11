@@ -4,7 +4,7 @@ public class Monster {
     String name;
     String type;
     int attack;
-    int hp;
+    double hp;
     int level;
     int rewardExp;
     Random random = new Random();

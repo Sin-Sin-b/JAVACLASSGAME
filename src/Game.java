@@ -25,7 +25,7 @@ public class Game {
     public void run() {
         System.out.println("게임에 오신 것을 환영합니다.");
         while (true) {
-            player.fighthp = player.fullhp;
+            player.hp = player.fullhp;
             player.fightattack = player.attack;
 
 
@@ -254,7 +254,7 @@ public class Game {
             }
 
 
-            player.fighthp = player.fullhp;
+            player.hp = player.fullhp;
 
         } else {
             System.out.println("장착을 취소합니다. 야영지로 돌아갑니다.");
@@ -321,8 +321,8 @@ public class Game {
 
             Random random = new Random();
 
-            while (player.fighthp > 0) {
-                System.out.println(player.name + "의 체력 : " + player.fighthp);
+            while (player.hp > 0) {
+                System.out.println(player.name + "의 체력 : " + player.hp);
                 System.out.println(monster1.name + "의 체력 : " + monster1.hp);
                 System.out.println(monster2.name + "의 체력 : " + monster2.hp);
                 System.out.println("-- 플레이어턴 -- ");
@@ -454,7 +454,7 @@ public class Game {
                                 use = false;
                             } else {
                                 player.useHpPotion();
-                                System.out.println("플레이어의 현재 체력이 " + player.fighthp + "가 되었습니다.");
+                                System.out.println("플레이어의 현재 체력이 " + player.hp + "가 되었습니다.");
                                 System.out.println("--------------------");
                                 usableItems.remove(select);
                                 player.inventory.remove(select);
@@ -469,12 +469,12 @@ public class Game {
                 monster1.goblinAttackPlayer(player);
 
 
-                if (player.fighthp > 0) {
+                if (player.hp > 0) {
                     monster2.goblinAttackPlayer(player);
                 }
 
 
-                if (player.fighthp <= 0) {
+                if (player.hp <= 0) {
                     break;
                 }
 
@@ -520,8 +520,8 @@ public class Game {
 
             Random random = new Random();
 
-            while (player.fighthp > 0) {
-                System.out.println("플레이어의 체력 : " + player.fighthp);
+            while (player.hp > 0) {
+                System.out.println("플레이어의 체력 : " + player.hp);
                 System.out.println(monster1.name + "의 체력 : " + monster1.hp);
                 System.out.println(monster2.name + "의 체력 : " + monster2.hp);
                 System.out.println("-- 플레이어턴 -- ");
@@ -652,7 +652,7 @@ public class Game {
                                 use = false;
                             } else {
                                 player.useHpPotion();
-                                System.out.println("플레이어의 현재 체력이 " + player.fighthp + "가 되었습니다.");
+                                System.out.println("플레이어의 현재 체력이 " + player.hp + "가 되었습니다.");
                                 System.out.println("--------------------");
                                 usableItems.remove(select);
                                 player.inventory.remove(select);
@@ -667,12 +667,12 @@ public class Game {
                 monster1.highOakAttackPlayer(player);
 
 
-                if (player.fighthp > 0) {
+                if (player.hp > 0) {
                     monster2.highOakAttackPlayer(player);
                 }
 
                 // 턴이 끝난 후 플레이어가 죽었는지 최종 확인
-                if (player.fighthp <= 0) {
+                if (player.hp <= 0) {
                     break; // 전투 종료
                 }
 
@@ -716,8 +716,8 @@ public class Game {
 
             Random random = new Random();
 
-            while (player.fighthp > 0) {
-                System.out.println("플레이어의 체력 : " + player.fighthp);
+            while (player.hp > 0) {
+                System.out.println("플레이어의 체력 : " + player.hp);
                 System.out.println(monster1. name + "의 체력 : " + monster1.hp);
                 System.out.println("-- 플레이어턴 -- ");
                 System.out.println("1. 일반 공격");
@@ -817,7 +817,7 @@ public class Game {
                                 use = false;
                             } else {
                                 player.useHpPotion();
-                                System.out.println("플레이어의 현재 체력이 " + player.fighthp + "가 되었습니다.");
+                                System.out.println("플레이어의 현재 체력이 " + player.hp + "가 되었습니다.");
                                 System.out.println("--------------------");
                                 usableItems.remove(select);
                                 player.inventory.remove(select);
@@ -831,7 +831,7 @@ public class Game {
                 }
                 monster1.highOakLeaderAttackPlayer(player);
 
-                if (player.fighthp <= 0) {
+                if (player.hp <= 0) {
                     break;
                 }
 
@@ -875,8 +875,8 @@ public class Game {
 
             Random random = new Random();
 
-            while (player.fighthp > 0) {
-                System.out.println("플레이어의 체력 : " + player.fighthp);
+            while (player.hp > 0) {
+                System.out.println("플레이어의 체력 : " + player.hp);
                 System.out.println(monster1.name + "의 체력 : " + monster1.hp);
                 System.out.println(monster2.name  + "의 체력 : " + monster2.hp);
                 System.out.println("-- 플레이어턴 -- ");
@@ -1008,7 +1008,7 @@ public class Game {
                                 use = false;
                             } else {
                                 player.useHpPotion();
-                                System.out.println("플레이어의 현재 체력이 " + player.fighthp + "가 되었습니다.");
+                                System.out.println("플레이어의 현재 체력이 " + player.hp + "가 되었습니다.");
                                 System.out.println("--------------------");
                                 usableItems.remove(select);
                                 player.inventory.remove(select);
@@ -1022,11 +1022,11 @@ public class Game {
                 }
                 monster1.undeadAttackPlayer(player);
 
-                if (player.fighthp > 0) {
+                if (player.hp > 0) {
                     monster2.undeadAttackPlayer(player);
                 }
 
-                if (player.fighthp <= 0) {
+                if (player.hp <= 0) {
                     break;
                 }
 
@@ -1071,8 +1071,8 @@ public class Game {
 
             Random random = new Random();
 
-            while (player.fighthp > 0) {
-                System.out.println("플레이어의 체력 : " + player.fighthp);
+            while (player.hp > 0) {
+                System.out.println("플레이어의 체력 : " + player.hp);
                 System.out.println(monster1.name  + "의 체력 : " + monster1.hp);
                 System.out.println("-- 플레이어턴 -- ");
                 System.out.println("1. 일반 공격");
@@ -1172,7 +1172,7 @@ public class Game {
                                 use = false;
                             } else {
                                 player.useHpPotion();
-                                System.out.println("플레이어의 현재 체력이 " + player.fighthp + "가 되었습니다.");
+                                System.out.println("플레이어의 현재 체력이 " + player.hp + "가 되었습니다.");
                                 System.out.println("--------------------");
                                 usableItems.remove(select);
                                 player.inventory.remove(select);
@@ -1186,7 +1186,7 @@ public class Game {
                 }
                 monster1.undeadLeaderAttackPlayer(player);
 
-                if (player.fighthp <= 0) {
+                if (player.hp <= 0) {
                     break;
                 }
 
@@ -1229,8 +1229,8 @@ public class Game {
 
             Random random = new Random();
 
-            while (player.fighthp > 0) {
-                System.out.println("플레이어의 체력 : " + player.fighthp);
+            while (player.hp > 0) {
+                System.out.println("플레이어의 체력 : " + player.hp);
                 System.out.println(monster1.name + "의 체력 : " + monster1.hp);
                 System.out.println("-- 플레이어턴 -- ");
                 System.out.println("1. 일반 공격");
@@ -1331,7 +1331,7 @@ public class Game {
                                 use = false;
                             } else {
                                 player.useHpPotion();
-                                System.out.println("플레이어의 현재 체력이 " + player.fighthp + "가 되었습니다.");
+                                System.out.println("플레이어의 현재 체력이 " + player.hp + "가 되었습니다.");
                                 System.out.println("--------------------");
                                 usableItems.remove(select);
                                 player.inventory.remove(select);
@@ -1345,7 +1345,7 @@ public class Game {
                 }
                 monster1.undeadKingAttackPlayer(player);
 
-                if (player.fighthp <= 0) {
+                if (player.hp <= 0) {
                     return false;
                 }
 

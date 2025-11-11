@@ -1,11 +1,9 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Player {
-    String name;
+public class Player extends Character {
+
     double fullhp;
-    double fighthp;
-    int level;
     double attack;
     double fightattack;
     int experience;
@@ -22,7 +20,7 @@ public class Player {
         this.name = name;
         this.level = 1;
         this.fullhp = 100;
-        this.fighthp = fullhp;
+        this.hp = fullhp;
         this.attack = 10;
         this.fightattack = attack;
         this.experience = 0;
@@ -38,11 +36,10 @@ public class Player {
 
             }
     void takeDamage(int damage) {
-        this.fighthp -= damage;
+        super.takeDamage();
         System.out.println(this.name + "에게 " + damage + "데미지를 주었다.");
-
-        if (this.fighthp <= 0) {
-            this.fighthp = 0;
+        if (this.hp <= 0) {
+            this.hp = 0;
             System.out.println("플레이어의 hp가 0이 되어 쓰러졌습니다. 야영지로 돌아갑니다.");
         }
     }
@@ -96,8 +93,8 @@ public class Player {
             case "광폭화":
 
                 this.fightattack = this.fightattack * 1.3;
-                this.fighthp -= this.fullhp * 0.1;
-                System.out.println("체력이 10% 감소해 " + this.fighthp + "이(가) 되었습니다.");
+                this.hp -= this.fullhp * 0.1;
+                System.out.println("체력이 10% 감소해 " + this.hp + "이(가) 되었습니다.");
                 System.out.println("공격력이 30% 증가해" + this.fightattack + "이(가) 되었습니다.");
                 break;
 
@@ -220,7 +217,7 @@ this.gold += gold;
 }
 
 void useHpPotion(){
-this.fighthp += this.fullhp*0.5;
+this.hp += this.fullhp*0.5;
 }
 
     void getExperience(int exp) {
