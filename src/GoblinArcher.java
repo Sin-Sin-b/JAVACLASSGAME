@@ -3,8 +3,8 @@ public class GoblinArcher extends Monster {
     GoblinArcher() {
         super("고블린 궁수", "일반", 15, 20, 1, 50);
     }
-
-    void attackPlayer(Player targetPlayer) {
+    @Override
+    public void attackPlayer(Player targetPlayer) {
         if (this.hp > 0) {
             System.out.println("-- " + this.name + "의 턴 --");
 

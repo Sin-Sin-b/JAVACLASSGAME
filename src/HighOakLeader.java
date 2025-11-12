@@ -4,7 +4,7 @@ public class HighOakLeader extends Monster {
         super("하이오크 장군", "중간보스", 40, 145, 3, 200);
     }
 
-
+    @Override
     public void attackPlayer(Player targetPlayer) {
         if (this.hp > 0) {
             System.out.println("\n-- " + this.name + "의 턴 -- ");

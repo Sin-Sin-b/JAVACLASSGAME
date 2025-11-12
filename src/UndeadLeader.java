@@ -4,7 +4,7 @@ public class UndeadLeader extends Monster {
         super("언데드 기사", "중간보스2", 55, 245, 5, 300);
     }
 
-
+    @Override
     public void attackPlayer(Player targetPlayer) {
         if (this.hp > 0) {
             System.out.println("\n-- " + this.name + "의 턴 -- ");

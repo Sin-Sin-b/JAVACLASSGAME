@@ -4,7 +4,7 @@ public class HighOakArcher extends Monster {
         super("하이오크 궁수", "일반", 20, 35, 2, 75);
     }
 
-
+    @Override
     public void attackPlayer(Player targetPlayer) {
         if (this.hp > 0) {
             System.out.println("\n-- " + this.name + "의 턴 -- ");

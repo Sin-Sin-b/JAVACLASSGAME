@@ -6,8 +6,8 @@
          super("고블린전사", "일반", 10, 30, 1, 50);
 
      }
-
-     void attackPlayer(Player targetPlayer) {
+     @Override
+     public void attackPlayer(Player targetPlayer) {
          if (this.hp > 0) {
              System.out.println("-- " + this.name + "의 턴 --");
              int pattern = random.nextInt(2);

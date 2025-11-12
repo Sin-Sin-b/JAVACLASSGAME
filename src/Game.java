@@ -466,11 +466,11 @@ public class Game {
 
 
                 }
-                monster1.goblinAttackPlayer(player);
+                monster1.attackPlayer(player);
 
 
                 if (player.hp > 0) {
-                    monster2.goblinAttackPlayer(player);
+                    monster2.attackPlayer(player);
                 }
 
 
@@ -664,11 +664,11 @@ public class Game {
 
 
                 }
-                monster1.highOakAttackPlayer(player);
+                monster1.attackPlayer(player);
 
 
                 if (player.hp > 0) {
-                    monster2.highOakAttackPlayer(player);
+                    monster2.attackPlayer(player);
                 }
 
                 // 턴이 끝난 후 플레이어가 죽었는지 최종 확인
@@ -829,7 +829,7 @@ public class Game {
 
 
                 }
-                monster1.highOakLeaderAttackPlayer(player);
+                monster1.attackPlayer(player);
 
                 if (player.hp <= 0) {
                     break;
@@ -1020,10 +1020,10 @@ public class Game {
 
 
                 }
-                monster1.undeadAttackPlayer(player);
+                monster1.attackPlayer(player);
 
                 if (player.hp > 0) {
-                    monster2.undeadAttackPlayer(player);
+                    monster2.attackPlayer(player);
                 }
 
                 if (player.hp <= 0) {
@@ -1184,7 +1184,7 @@ public class Game {
 
 
                 }
-                monster1.undeadLeaderAttackPlayer(player);
+                monster1.attackPlayer(player);
 
                 if (player.hp <= 0) {
                     break;
@@ -1343,7 +1343,7 @@ public class Game {
 
 
                 }
-                monster1.undeadKingAttackPlayer(player);
+                monster1.attackPlayer(player);
 
                 if (player.hp <= 0) {
                     return false;

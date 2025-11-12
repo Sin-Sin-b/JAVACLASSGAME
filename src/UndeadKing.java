@@ -4,7 +4,7 @@ public class UndeadKing extends Monster {
         super("언데드 왕", "보스", 70, 355, 6, 150);
     }
 
-
+    @Override
     public void attackPlayer(Player targetPlayer) {
         if (this.hp > 0) {
             System.out.println("\n-- " + this.name + "의 턴 -- ");

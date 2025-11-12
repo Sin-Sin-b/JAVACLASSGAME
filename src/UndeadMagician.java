@@ -4,7 +4,7 @@ public class UndeadMagician extends Monster {
         super("언데드 마법사", "일반", 30, 75, 4, 125);
     }
 
-
+    @Override
     public void attackPlayer(Player targetPlayer) {
         if (this.hp > 0) {
             System.out.println("\n-- " + this.name + "의 턴 -- ");
