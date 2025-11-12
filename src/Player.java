@@ -17,10 +17,8 @@ public class Player extends Character {
     List<Item> devilstone;
 
             Player(String name){
-        this.name = name;
-        this.level = 1;
+       super(name,1,100);
         this.fullhp = 100;
-        this.hp = fullhp;
         this.attack = 10;
         this.fightattack = attack;
         this.experience = 0;
@@ -35,8 +33,10 @@ public class Player extends Character {
         this.devilstone = new ArrayList<>();
 
             }
+
+            @Override
     void takeDamage(int damage) {
-        super.takeDamage();
+        super.takeDamage(damage);
         System.out.println(this.name + "에게 " + damage + "데미지를 주었다.");
         if (this.hp <= 0) {
             this.hp = 0;

@@ -234,7 +234,7 @@ public class Game {
         for (int i = 0; i < equippableItems.size(); i++) {
             Item item = equippableItems.get(i);
 
-            System.out.println((i + 1) + ". " + item.name + " (체력 +" + item.addedHp + ")");
+            System.out.println((i + 1) + ". " + item.name + " (체력 +" + ((Equipment) item).addedHp + ")");
         }
         System.out.println("0. 취소");
         System.out.print("선택: ");
@@ -276,7 +276,7 @@ public class Game {
         if (oldItem != null) {
             System.out.println(oldItem.name + "을(를) 장착 해제합니다.");
 
-            player.fullhp -= oldItem.addedHp;
+            player.fullhp -= ((Equipment) oldItem).addedHp;
 
             player.inventory.add(oldItem);
         }
@@ -289,7 +289,7 @@ public class Game {
         }
 
 
-        player.fullhp += newItem.addedHp;
+        player.fullhp += ((Equipment) newItem).addedHp;
 
         player.inventory.remove(newItem);
 
