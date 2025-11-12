@@ -1,15 +1,13 @@
 import java.util.Random;
 
 public abstract class Monster extends Character {
-    String name;
+
     String type;
     int attack;
-    double hp;
-    int level;
     int rewardExp;
     Random random = new Random();
 
-    Monster(String name, String type, int attack, int hp, int level, int rewardExp) {
+    Monster(String name, String type, int attack, double hp, int level, int rewardExp) {
         super(name,level,hp);
         this.type = type;
         this.attack = attack;
