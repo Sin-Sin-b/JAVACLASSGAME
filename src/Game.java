@@ -10,6 +10,8 @@ public class Game {
     Scanner scanner = new Scanner(System.in);
     Skill selectSkill;
     Monsterlist monsterlist;
+    Shopkeeper shopkeeper;
+    Blacksmith blacksmith;
 
     Game() {
         System.out.println("이름을 입력하십시오 : ");
@@ -19,6 +21,7 @@ public class Game {
         this.itemlist = new ItemList();
         this.stagelist = new StageList();
         this.monsterlist = new Monsterlist();
+        this.shopkeeper = new Shopkeeper();
         player.addcut(skilllist.cut());
     }
 
@@ -89,9 +92,8 @@ public class Game {
                     break;
 
                 case 2:
-                    openShop();
-
-                    break;// Player 객체의 상태 표시 메소드 호출
+                    shopkeeper.openShop(this);
+                    break;//
                 case 3:
                     player.showInventory();
                     System.out.println("무엇을 하시겠습니까?");
@@ -114,9 +116,8 @@ public class Game {
                     break;
 
                 case 6:
-                    System.out.println("사용할 마석을 골라주십시오.");
-                    player.showDevilstone();
-                    devilStoneUse();
+
+                    blacksmith.devilStoneUse(this);
                     break;
 
                 case 7:
@@ -132,42 +133,7 @@ public class Game {
     }
 
 
-    void openShop() {
 
-        while (true) {
-            System.out.println("------ 상점 ------");
-            System.out.println("보유골드 : "+ player.gold );
-            System.out.println("1. 힘의 포션 구매 (10 골드)");
-            System.out.println("2. 회복 포션 구매 (10 골드)");
-            System.out.println("3. 상점 나가기");
-            System.out.print("선택: ");
-
-            int choice = scanner.nextInt();
-
-            if (choice == 1) {
-                if (player.gold >= 10) {
-                    Item strengthPotion = itemlist.getStrPotion();
-                    player.addItemToInventory(strengthPotion);
-                    player.usegold(10);
-                } else {
-                    System.out.println("골드가 부족합니다.");
-                }
-
-
-            } else if (choice == 2) {
-                if (player.gold >= 10) {
-                    Item healPotion = itemlist.getHealPotion();
-                    player.addItemToInventory(healPotion);
-                    player.usegold(10);
-                } else {
-                    System.out.println("골드가 부족합니다.");
-                }
-            } else {
-                System.out.println("야영지로 돌아갑니다.");
-                break;
-            }
-        }
-    }
 
     void devilStoneUse() {
 

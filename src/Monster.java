@@ -1,6 +1,6 @@
 import java.util.Random;
 
-public abstract class Monster extends Character {
+public class Monster extends Character {
 
     String type;
     int attack;
@@ -14,7 +14,8 @@ public abstract class Monster extends Character {
         this.rewardExp = rewardExp;
     }
 
-    public abstract void attackPlayer(Player targetPlayer);
+    public void attackPlayer(Player targetPlayer){
+    }
 
     void takeDamage(int damage) {
        super.takeDamage(damage);

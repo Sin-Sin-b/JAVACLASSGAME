@@ -3,7 +3,7 @@
 
      GoblinWarrior() {
 
-         super("고블린전사", "일반", 10, 30, 1, 50);
+         super("고블린 전사", "일반", 10, 30, 1, 50);
 
      }
      @Override
