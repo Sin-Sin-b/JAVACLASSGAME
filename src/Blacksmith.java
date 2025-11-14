@@ -6,7 +6,7 @@ Blacksmith(){
 super("대장장이 스미스");
 
 }
-    public void devilStoneUse(Game game) {
+    public void devilStoneUseWarrior(Game game) {
 
         System.out.println("\n--- " + this.name + " ---");
         System.out.println("자네가 가진 마석을 보여주게. 잠재력을 개방해 줄 수 있을지도 모르지...");

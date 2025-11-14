@@ -93,7 +93,7 @@ public class Game {
 
                 case 2:
                     shopkeeper.openShop(this);
-                    break;//
+                    break;
                 case 3:
                     player.showInventory();
                     System.out.println("무엇을 하시겠습니까?");
@@ -117,7 +117,7 @@ public class Game {
 
                 case 6:
 
-                    blacksmith.devilStoneUse(this);
+                    blacksmith.devilStoneUseWarrior(this);
                     break;
 
                 case 7:
