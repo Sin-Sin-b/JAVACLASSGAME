@@ -1,5 +1,5 @@
 
- public class GoblinWarrior extends Monster {
+ public class GoblinWarrior extends NormalMonster {
 
      GoblinWarrior() {
 

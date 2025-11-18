@@ -1,4 +1,4 @@
-public class UndeadLeader extends Monster {
+public class UndeadLeader extends BossMonster {
 
     public UndeadLeader() {
         super("언데드 기사", "중간보스2", 55, 245, 5, 300);

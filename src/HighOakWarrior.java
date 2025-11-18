@@ -1,4 +1,4 @@
-public class HighOakWarrior extends Monster {
+public class HighOakWarrior extends NormalMonster {
 
     public HighOakWarrior() {
         super("하이오크 전사", "일반", 15, 55, 2, 75);

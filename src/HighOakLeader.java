@@ -1,4 +1,4 @@
-public class HighOakLeader extends Monster {
+public class HighOakLeader extends BossMonster {
 
     public HighOakLeader() {
         super("하이오크 장군", "중간보스", 40, 145, 3, 200);

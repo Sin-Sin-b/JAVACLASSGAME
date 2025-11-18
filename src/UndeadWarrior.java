@@ -1,4 +1,4 @@
-public class UndeadWarrior extends Monster {
+public class UndeadWarrior extends NormalMonster {
 
     public UndeadWarrior() {
         super("언데드 검사", "일반", 25, 115, 4, 125);

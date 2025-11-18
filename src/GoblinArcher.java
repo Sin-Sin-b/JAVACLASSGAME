@@ -1,4 +1,4 @@
-public class GoblinArcher extends Monster {
+public class GoblinArcher extends NormalMonster {
 
     GoblinArcher() {
         super("고블린 궁수", "일반", 15, 20, 1, 50);
