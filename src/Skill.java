@@ -3,7 +3,6 @@ public class Skill {
     String description;
     String job;
     String category;
-
     int requiredLevel;
 
     Skill(String name,String description,String job,String category,int requiredLevel){
