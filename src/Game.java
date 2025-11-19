@@ -315,7 +315,7 @@ public class Game {
 
                             Skill selectedSkill = player.getskill(skillchoice);
 
-                            if (selectedSkill.damage > 0) {
+                            if (selectedSkill instanceof DamageSkill) {
                                 System.out.println("누구를 공격하시겠습니까?");
                                 System.out.println("1. "+ monster1.name);
                                 System.out.println("2. "+ monster2.name);
@@ -523,7 +523,7 @@ public class Game {
 
                             Skill selectedSkill = player.getskill(skillchoice);
 
-                            if (selectedSkill.damage > 0) {
+                            if (selectedSkill instanceof DamageSkill) {
                                 System.out.println("누구를 공격하시겠습니까?");
                                 System.out.println("1. "+ monster1.name);
                                 System.out.println("2. "+ monster2.name);
@@ -705,7 +705,7 @@ public class Game {
 
                             Skill selectedSkill = player.getskill(skillchoice);
 
-                            if (selectedSkill.damage > 0) {
+                            if (selectedSkill instanceof DamageSkill) {
 
 
 
@@ -887,7 +887,7 @@ public class Game {
 
                             Skill selectedSkill = player.getskill(skillchoice);
 
-                            if (selectedSkill.damage > 0) {
+                            if (selectedSkill instanceof DamageSkill) {
                                 System.out.println("누구를 공격하시겠습니까?");
                                 System.out.println("1. "+ monster1.name);
                                 System.out.println("2. "+ monster2.name);
@@ -1070,7 +1070,7 @@ public class Game {
 
                             Skill selectedSkill = player.getskill(skillchoice);
 
-                            if (selectedSkill.damage > 0) {
+                            if (selectedSkill instanceof DamageSkill) {
 
 
 
@@ -1228,7 +1228,7 @@ public class Game {
 
                             Skill selectedSkill = player.getskill(skillchoice);
 
-                            if (selectedSkill.damage > 0) {
+                            if (selectedSkill instanceof DamageSkill) {
 
 
 
