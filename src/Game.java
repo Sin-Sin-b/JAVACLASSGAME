@@ -131,7 +131,7 @@ public class Game {
 
                 case 6:
 
-                    blacksmith.devilStoneUseWarrior(this);
+                    blacksmith.devilStoneUse(this);
                     break;
 
                 case 7:
