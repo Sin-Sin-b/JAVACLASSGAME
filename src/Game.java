@@ -149,49 +149,6 @@ public class Game {
 
 
 
-    void devilStoneUse() {
-
-        ArrayList<Item> usabledevilstones = new ArrayList<>();
-        for (Item item : player.devilstone) {
-
-            if (item.type.equals("1차강화석") || item.type.equals("2차강화석")) {
-                usabledevilstones.add(item);
-            }
-        }
-        if (usabledevilstones.isEmpty()) {
-            System.out.println("사용할 수 있는 마석이 없습니다.");
-            return;
-        }
-        System.out.println("------ 사용할 아이템 선택 ------");
-        for (int i = 0; i < usabledevilstones.size(); i++) {
-            Item item = usabledevilstones.get(i);
-            System.out.println((i + 1) + ". " + item.name);
-
-        }
-        System.out.println("0. 취소");
-        System.out.print("선택: ");
-        int choice = scanner.nextInt();
-
-        if (choice > 0 && usabledevilstones.size() <= choice) {
-            Item selecteditem = usabledevilstones.get(choice - 1);
-            if (selecteditem.type.equals("1차강화석")) {
-
-                player.addSkill(skilllist.ruinousWave());
-                player.devilstone.remove(selecteditem);
-                System.out.println("'파멸의 검기' 스킬을(를) 획득했습니다.");
-
-            } else {
-
-                player.addSkill(skilllist.demonic());
-                player.devilstone.remove(selecteditem);
-                System.out.println("'마신화' 스킬을(를) 획득했습니다.");
-            }
-
-
-        }
-
-    }
-
     void equipItem() {
 
         ArrayList<Item> equippableItems = new ArrayList<>();
@@ -465,8 +422,11 @@ public class Game {
                     player.getGold(100);
                     player.getExperience(rewardexp);
                     player.levelUp();
-                    player.addSkill(skilllist.berserk());
-
+                    if(player.jobName.equals("전사")) {
+                        player.addSkill(skilllist.berserk());
+                    } else{
+                        player.addSkill(skilllist.eagleeye());
+                    }
 
                     break;
                 }
@@ -663,7 +623,12 @@ public class Game {
                     player.getGold(100);
                     player.getExperience(rewardexp);
                     player.levelUp();
-                    player.addSkill(skilllist.whirlwind());
+                    if(player.jobName.equals("전사")) {
+                        player.addSkill(skilllist.whirlwind());
+                    } else{
+                        player.addSkill(skilllist.Powershot());
+                    }
+
 
                     break;
                 }
@@ -1018,8 +983,12 @@ public class Game {
                     player.getGold(100);
                     player.getExperience(rewardexp);
                     player.levelUp();
-                    player.addSkill(skilllist.crush());
 
+                    if(player.jobName.equals("전사")) {
+                        player.addSkill(skilllist.crush());
+                    } else{
+                        player.addSkill(skilllist.Snipe());
+                    }
                     break;
                 }
 

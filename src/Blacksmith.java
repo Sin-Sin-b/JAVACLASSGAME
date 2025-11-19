@@ -37,15 +37,27 @@ super("대장장이 스미스");
         if (choice > 0 && choice <= usabledevilstones.size()) {
             Item selecteditem = usabledevilstones.get(choice - 1);
             if (selecteditem.type.equals("1차강화석")) {
-
-                game.player.addSkill(game.skilllist.ruinousWave());
-                game.player.devilstone.remove(selecteditem);
-                System.out.println(this.name + ": 훌륭하군! '파멸의 검기'의 힘일세.");
+                if(game.player.jobName.equals("전사")) {
+                    game.player.addSkill(game.skilllist.ruinousWave());
+                    game.player.devilstone.remove(selecteditem);
+                    System.out.println(this.name + ": 훌륭하군! '파멸의 검기'의 힘일세.");
+                }else{
+                    game.player.addSkill(game.skilllist.blazingArrow());
+                    game.player.devilstone.remove(selecteditem);
+                    System.out.println(this.name + ": 훌륭하군! '공허의 화살'의 힘일세.");
+                }
 
             } else {
-                game.player.addSkill(game.skilllist.demonic());
-                game.player.devilstone.remove(selecteditem);
-                System.out.println(this.name + ": 조심하게! '마신화'의 힘은 강력하지만 위험하다네.");
+                if(game.player.jobName.equals("전사")) {
+                    game.player.addSkill(game.skilllist.demonic());
+                    game.player.devilstone.remove(selecteditem);
+                    System.out.println(this.name + ": 조심하게! '마신화'의 힘은 강력하지만 위험하다네.");
+                }else{
+                    game.player.addSkill(game.skilllist.abyssSight());
+                    game.player.devilstone.remove(selecteditem);
+                    System.out.println(this.name + ": 조심하게! '심연의 눈'의 힘은 강력하지만 위험하다네.");
+                }
+
             }
         } else {
             System.out.println(this.name + ": 현명한 선택일세.");
