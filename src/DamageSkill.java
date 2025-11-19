@@ -1,4 +1,4 @@
-public class DamageSkill {
+public class DamageSkill extends Skill{
 
 int damage;
 String type;
