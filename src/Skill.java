@@ -2,9 +2,8 @@ public class Skill {
     String name;
     String description;
     String job;
-    String type;
     String category;
-    int damage;
+
     int requiredLevel;
 
     Skill(String name,String description,String job,String category,int requiredLevel){
