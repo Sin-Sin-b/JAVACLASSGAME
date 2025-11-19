@@ -11,7 +11,7 @@ public class Player extends Character {
     int gold;
     Item equippedArmor;
     Item equippedHelmet;
-    int devilswordLevel;
+    int devilweaponLevel;
     List<Item> inventory;
     List<Skill> skillset;
     List<Item> devilstone;
@@ -29,7 +29,7 @@ public class Player extends Character {
         this.gold = 0;
         this.equippedArmor = null;
         this.equippedHelmet = null;
-       this.devilswordLevel = 0;
+       this.devilweaponLevel = 0;
 
         this.inventory = new ArrayList<>();
         this.skillset = new ArrayList<>();
@@ -60,7 +60,7 @@ public class Player extends Character {
         System.out.println("현재 경험치: " + experience);
         System.out.println("요구 경험치: " + (needExperience - experience));
         System.out.println("보유 골드: " + gold);
-        System.out.println("마검 강화: " +  devilswordLevel + "단계" );
+        System.out.println("무기 강화 단계: " +  devilweaponLevel + "단계" );
 
         if(equippedArmor == null){
         System.out.println("장착 상의 : 없음");

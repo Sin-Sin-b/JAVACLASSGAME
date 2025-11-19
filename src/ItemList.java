@@ -9,19 +9,19 @@ public class ItemList {
     }
 
     Item getLeatherArmor() {
-        return new Equipment("가죽 갑옷", "짜임새 좋은 가죽갑옷이다. 체력을 +30 늘려준다.", 20, 30);
+        return new Equipment("가죽 갑옷", "짜임새 좋은 가죽갑옷이다. 체력을 +30 늘려준다.", 20, 30,"전사");
     }
 
     Item getLeatherHelmet() {
-        return new Equipment("가죽 헬멧", "짜임새 좋은 가죽헬멧이다. 체력을 +30 늘려준다.", 20,30);
+        return new Equipment("가죽 헬멧", "짜임새 좋은 가죽헬멧이다. 체력을 +30 늘려준다.", 20,30,"전사");
     }
 
     Item getSteelArmor() {
-        return new Equipment("강철 갑옷", "튼튼한 강철 갑옷이다. 체력을 +50 늘려준다.", 30, 50);
+        return new Equipment("강철 갑옷", "튼튼한 강철 갑옷이다. 체력을 +50 늘려준다.", 30, 50,"전사");
     }
 
     Item getSteelHelmet() {
-        return new Equipment("강철 헬멧", "튼튼한 강철 헬멧이다. 체력을 +50 늘려준다.", 30,50);
+        return new Equipment("강철 헬멧", "튼튼한 강철 헬멧이다. 체력을 +50 늘려준다.", 30,50,"전사");
     }
 
     Item getdevilRedStone() {
@@ -33,7 +33,19 @@ public class ItemList {
         return new Material("검은 마석", "불길한 마석이다.거대한 힘이 느껴진다.", 0, "2차강화석");
     }
 
+    Item getLeatherHood() {
+        return new Equipment("가죽 후드", "잘 만들어진 가벼운 가죽후드다. 체력을 +30 늘려준다.", 20, 30,"궁수");
+    }
+    Item getLeatherVest() {
+        return new Equipment("가죽 조끼", "잘 만들어진 가벼운 가죽조끼다. 체력을 +30 늘려준다.", 20,30,"궁수");
+    }
 
+    Item getSteelForestGuardianArmor() {
+        return new Equipment("숲의 수호자 갑옷", "숲을 수호하던 자의 갑옷이다. 체력을 +50 늘려준다.", 30, 50,"궁수");
+    }
+    Item getSteelForestCrown() {
+        return new Equipment("숲의 관", "숲을 수호하던 자의 관이다. 체력을 +50 늘려준다.", 30, 50,"궁수");
+    }
 
 
 }

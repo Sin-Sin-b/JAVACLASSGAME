@@ -41,10 +41,12 @@ super("대장장이 스미스");
                     game.player.addSkill(game.skilllist.ruinousWave());
                     game.player.devilstone.remove(selecteditem);
                     System.out.println(this.name + ": 훌륭하군! '파멸의 검기'의 힘일세.");
+                    game.player.devilweaponLevel = 1;
                 }else{
                     game.player.addSkill(game.skilllist.blazingArrow());
                     game.player.devilstone.remove(selecteditem);
                     System.out.println(this.name + ": 훌륭하군! '공허의 화살'의 힘일세.");
+                    game.player.devilweaponLevel = 1;
                 }
 
             } else {
@@ -52,10 +54,12 @@ super("대장장이 스미스");
                     game.player.addSkill(game.skilllist.demonic());
                     game.player.devilstone.remove(selecteditem);
                     System.out.println(this.name + ": 조심하게! '마신화'의 힘은 강력하지만 위험하다네.");
+                    game.player.devilweaponLevel = 2;
                 }else{
                     game.player.addSkill(game.skilllist.abyssSight());
                     game.player.devilstone.remove(selecteditem);
                     System.out.println(this.name + ": 조심하게! '심연의 눈'의 힘은 강력하지만 위험하다네.");
+                    game.player.devilweaponLevel = 2;
                 }
 
             }

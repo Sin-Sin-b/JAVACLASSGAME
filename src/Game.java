@@ -184,9 +184,9 @@ public class Game {
             Item selectedItem = equippableItems.get(choice - 1);
 
 
-            if (selectedItem.name.contains("헬멧")) {
+            if (selectedItem.name.contains("헬멧")||selectedItem.name.contains("관")||selectedItem.name.contains("후드")) {
                 unequipAndEquip(selectedItem, "helmet");
-            } else if (selectedItem.name.contains("갑옷")) {
+            } else if (selectedItem.name.contains("갑옷")||selectedItem.name.contains("조끼")) {
                 unequipAndEquip(selectedItem, "armor");
             }
 
@@ -418,7 +418,12 @@ public class Game {
                 if (monster1.hp == 0 && monster2.hp == 0) {
                     System.out.println("적을 모두 처치했습니다.");
                     int rewardexp = monster1.rewardExp + monster2.rewardExp;
-                    player.addItemToInventory(itemlist.getLeatherArmor());
+                  if(player.jobName.equals("전사")) {
+                      player.addItemToInventory(itemlist.getLeatherArmor());
+                  }else{
+                      player.addItemToInventory(itemlist.getLeatherVest());
+                  }
+
                     player.getGold(100);
                     player.getExperience(rewardexp);
                     player.levelUp();
@@ -436,6 +441,7 @@ public class Game {
 
         }
     }
+
 
     void battleFloor5() {
         Stage battlestage = stagelist.floor5();
@@ -619,7 +625,11 @@ public class Game {
                 if (monster1.hp == 0 && monster2.hp == 0) {
                     System.out.println("적을 모두 처치했습니다.");
                     int rewardexp = monster1.rewardExp + monster2.rewardExp;
-                    player.addItemToInventory(itemlist.getLeatherHelmet());
+                    if(player.jobName.equals("전사")) {
+                        player.addItemToInventory(itemlist.getLeatherHelmet());
+                    }else{
+                        player.addItemToInventory(itemlist.getLeatherHood());
+                    }
                     player.getGold(100);
                     player.getExperience(rewardexp);
                     player.levelUp();
@@ -978,8 +988,14 @@ public class Game {
                 if (monster1.hp == 0 && monster2.hp == 0) {
                     System.out.println("적을 모두 처치했습니다.");
                     int rewardexp = monster1.rewardExp + monster2.rewardExp;
-                    player.addItemToInventory(itemlist.getSteelHelmet());
-                    player.addItemToInventory(itemlist.getSteelArmor());
+                    if(player.jobName.equals("전사")) {
+                        player.addItemToInventory(itemlist.getSteelHelmet());
+                        player.addItemToInventory(itemlist.getSteelArmor());
+                    }else{
+                        player.addItemToInventory(itemlist.getSteelForestCrown());
+                        player.addItemToInventory(itemlist.getSteelForestGuardianArmor());
+                    }
+
                     player.getGold(100);
                     player.getExperience(rewardexp);
                     player.levelUp();
