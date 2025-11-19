@@ -16,13 +16,27 @@ public class Game {
     Game() {
         System.out.println("이름을 입력하십시오 : ");
         String name = scanner.next();
-        this.player = new Player(name);
+        System.out.println("직업을 선택하십시오.");
+        System.out.println("1. 전사");
+        System.out.println("2. 궁수");
+        System.out.print("선택: ");
+
+        int jobchoice = scanner.nextInt();
+
+        if(jobchoice==1){
+            this.player = new Warrior(name);
+            player.addSkill(skilllist.cut());
+        }else{
+            this.player = new Archer(name);
+            player.addSkill(skilllist.doubleshot());
+        }
+
         this.skilllist = new SkillList();
         this.itemlist = new ItemList();
         this.stagelist = new StageList();
         this.monsterlist = new Monsterlist();
         this.shopkeeper = new Shopkeeper();
-        player.addcut(skilllist.cut());
+
     }
 
     public void run() {

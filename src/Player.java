@@ -16,10 +16,13 @@ public class Player extends Character {
     List<Skill> skillset;
     List<Item> devilstone;
 
-            Player(String name){
-       super(name,1,100);
-        this.fullhp = 100;
-        this.attack = 10;
+    String jobName;
+
+            Player(String name,String jobName, double fullhp, double attack){
+       super(name,1,fullhp);
+       this.jobName = jobName;
+       this.fullhp=fullhp;
+       this.attack=attack;
         this.fightattack = attack;
         this.experience = 0;
         this.needExperience = 100;
@@ -44,7 +47,7 @@ public class Player extends Character {
         }
     }
 
-    public void useSkill(Skill skill, Monster target) {
+    public void useSkillWarrior(Skill skill, Monster target) {
         System.out.println(this.name + "이(가) " + skill.name + "을(를) 사용했습니다!");
 
 
