@@ -274,7 +274,17 @@ public class Game {
                 System.out.println("3. 아이템 사용");
                 System.out.println("선택 : ");
 
-                int battlechoice = scanner.nextInt();
+                int battlechoice;
+                while (true) {
+                    battlechoice = scanner.nextInt();
+
+                    if (battlechoice == 1 || battlechoice == 2 || battlechoice == 3) {
+                        break;
+                    } else {
+                        System.out.println("잘못된 입력입니다. 1~3번 중 하나를 선택해주세요.");
+                        System.out.print("선택 : ");
+                    }
+                }
 
 
                 if (battlechoice == 1) {
@@ -349,7 +359,7 @@ public class Game {
                         }
                     }
 
-                } else {
+                } else if(battlechoice==3) {
                     ArrayList<Item> usableItems = new ArrayList<>();
                     for (Item item : player.inventory) {
                         if (item.type.equals("회복") || item.type.equals("강화")) {
@@ -482,7 +492,17 @@ public class Game {
                 System.out.println("3. 아이템 사용");
                 System.out.println("선택 : ");
 
-                int battlechoice = scanner.nextInt();
+                int battlechoice;
+                while (true) {
+                    battlechoice = scanner.nextInt();
+
+                    if (battlechoice == 1 || battlechoice == 2 || battlechoice == 3) {
+                        break;
+                    } else {
+                        System.out.println("잘못된 입력입니다. 1~3번 중 하나를 선택해주세요.");
+                        System.out.print("선택 : ");
+                    }
+                }
 
 
                 if (battlechoice == 1) {
@@ -556,7 +576,7 @@ public class Game {
                             System.out.println("스킬 목록에 없는 번호입니다. 다시 선택해주세요.");
                         }
                     }
-                } else {
+                } else if(battlechoice == 3){
                     ArrayList<Item> usableItems = new ArrayList<>();
                     for (Item item : player.inventory) {
                         if (item.type.equals("회복") || item.type.equals("강화")) {
@@ -623,9 +643,9 @@ public class Game {
                     monster2.attackPlayer(player);
                 }
 
-                // 턴이 끝난 후 플레이어가 죽었는지 최종 확인
+
                 if (player.hp <= 0) {
-                    break; // 전투 종료
+                    break;
                 }
 
                 if (monster1.hp == 0 && monster2.hp == 0) {
@@ -686,7 +706,18 @@ public class Game {
                 System.out.println("3. 아이템 사용");
                 System.out.println("선택 : ");
 
-                int battlechoice = scanner.nextInt();
+                int battlechoice;
+                while (true) {
+                    battlechoice = scanner.nextInt();
+
+                    if (battlechoice == 1 || battlechoice == 2 || battlechoice == 3) {
+                        break;
+                    } else {
+                        System.out.println("잘못된 입력입니다. 1~3번 중 하나를 선택해주세요.");
+                        System.out.print("선택 : ");
+                    }
+                }
+
 
 
                 if (battlechoice == 1) {
@@ -846,7 +877,17 @@ public class Game {
                 System.out.println("3. 아이템 사용");
                 System.out.println("선택 : ");
 
-                int battlechoice = scanner.nextInt();
+                int battlechoice;
+                while (true) {
+                    battlechoice = scanner.nextInt();
+
+                    if (battlechoice == 1 || battlechoice == 2 || battlechoice == 3) {
+                        break;
+                    } else {
+                        System.out.println("잘못된 입력입니다. 1~3번 중 하나를 선택해주세요.");
+                        System.out.print("선택 : ");
+                    }
+                }
 
 
                 if (battlechoice == 1) {
@@ -1051,7 +1092,18 @@ public class Game {
                 System.out.println("3. 아이템 사용");
                 System.out.println("선택 : ");
 
-                int battlechoice = scanner.nextInt();
+                int battlechoice;
+                while (true) {
+                    battlechoice = scanner.nextInt();
+
+                    if (battlechoice == 1 || battlechoice == 2 || battlechoice == 3) {
+                        break;
+                    } else {
+                        System.out.println("잘못된 입력입니다. 1~3번 중 하나를 선택해주세요.");
+                        System.out.print("선택 : ");
+                    }
+                }
+
 
 
                 if (battlechoice == 1) {
@@ -1209,7 +1261,18 @@ public class Game {
                 System.out.println("3. 아이템 사용");
                 System.out.println("선택 : ");
 
-                int battlechoice = scanner.nextInt();
+                int battlechoice;
+                while (true) {
+                    battlechoice = scanner.nextInt();
+
+                    if (battlechoice == 1 || battlechoice == 2 || battlechoice == 3) {
+                        break;
+                    } else {
+                        System.out.println("잘못된 입력입니다. 1~3번 중 하나를 선택해주세요.");
+                        System.out.print("선택 : ");
+                    }
+                }
+
 
 
                 if (battlechoice == 1) {

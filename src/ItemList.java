@@ -26,11 +26,11 @@ public class ItemList {
 
     Item getdevilRedStone() {
 
-        return new Material("붉은 마석", "불길한 마석이다.큰 힘이 느껴진다.", 0, "1차강화석");
+        return new Item("붉은 마석", "불길한 마석이다.큰 힘이 느껴진다.", 0, "1차강화석");
     }
 
     Item getdevilBlackStone() {
-        return new Material("검은 마석", "불길한 마석이다.거대한 힘이 느껴진다.", 0, "2차강화석");
+        return new Item("검은 마석", "불길한 마석이다.거대한 힘이 느껴진다.", 0, "2차강화석");
     }
 
     Item getLeatherHood() {

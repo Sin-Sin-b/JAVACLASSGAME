@@ -1,48 +1,33 @@
 public class Monsterlist {
 
     Monster goblinwarrior() {
-
-        return new GoblinWarrior();
+        return new NormalMonster("고블린 전사", "일반", 10, 30, 1, 50);
     }
-
     Monster goblinarcher() {
-
-        return new GoblinArcher();
+        return new NormalMonster("고블린 궁수", "일반", 15, 20, 1, 50);
     }
-
     Monster highoakwarrior() {
-
-        return new HighOakWarrior();
-
+        return new NormalMonster("하이오크 전사", "일반", 15, 55, 2, 75);
     }
-
-
     Monster highoakarcher() {
-
-        return new HighOakArcher();
+        return new NormalMonster("하이오크 궁수", "일반", 20, 35, 2, 75);
     }
-
-    Monster highoakleader() {
-        return new HighOakLeader();
-    }
-
     Monster undeadwarrior() {
-        return new UndeadWarrior();
+        return new NormalMonster("언데드 검사", "일반", 25, 115, 4, 125);
     }
-
     Monster undeadmagician() {
-        return new UndeadMagician();
-
+        return new NormalMonster("언데드 마법사", "일반", 30, 75, 4, 125);
     }
 
+    // --- 보스 몬스터 ---
+    Monster highoakleader() {
+        return new BossMonster("하이오크 장군", "중간보스", 40, 145, 3, 200);
+    }
     Monster undeadleader() {
-
-        return new UndeadLeader();
+        return new BossMonster("언데드 기사", "중간보스2", 55, 245, 5, 300);
     }
-
     Monster undeadking() {
-       return new UndeadKing();
+        return new BossMonster("언데드 왕", "보스", 70, 355, 6, 150);
     }
-
 }
 
