@@ -15,6 +15,9 @@ public class Skill {
 
             }
 
+    void execute(Player user, Monster target){
+
+    }
 
 
 }
