@@ -4,6 +4,8 @@ public class BuffSKillHpCost extends BuffSkill{
         super(name, description, job, category,requiredLevel, attackMultiplier);
         this.hpCostRatio = hpCostRatio;
     }
+
+    @Override
     void execute(Player user, Monster target) {
 
         double hpCost = user.fullhp * this.hpCostRatio;

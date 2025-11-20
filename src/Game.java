@@ -16,6 +16,14 @@ public class Game {
     Game() {
         System.out.println("이름을 입력하십시오 : ");
         String name = scanner.next();
+
+
+        this.skilllist = new SkillList();
+        this.itemlist = new ItemList();
+        this.stagelist = new StageList();
+        this.monsterlist = new Monsterlist();
+        this.shopkeeper = new Shopkeeper();
+        this.blacksmith = new Blacksmith();
         System.out.println("직업을 선택하십시오.");
         System.out.println("1. 전사");
         System.out.println("2. 궁수");
@@ -30,13 +38,6 @@ public class Game {
             this.player = new Archer(name);
             player.addSkill(skilllist.doubleshot());
         }
-
-        this.skilllist = new SkillList();
-        this.itemlist = new ItemList();
-        this.stagelist = new StageList();
-        this.monsterlist = new Monsterlist();
-        this.shopkeeper = new Shopkeeper();
-
     }
 
     public void run() {
@@ -53,7 +54,7 @@ public class Game {
             System.out.println("3. 인벤토리 확인");
             System.out.println("4. 내 정보 보기");
             System.out.println("5. 스킬 목록");
-            System.out.println("6. 마검 강화");
+            System.out.println("6. 마석 강화");
             System.out.println("7. 게임 종료");
             System.out.print("선택: ");
 
@@ -67,6 +68,7 @@ public class Game {
                     System.out.println("4. 7층 마케팅층 - 적정 레벨 4");
                     System.out.println("5. 8층 임원층 - 적정 레벨 5");
                     System.out.println("6. 9층 대표이사 / 이사회층 - 적정 레벨 6");
+                    System.out.println("7. 야영지로 돌아간다");
                     System.out.println("어떤 스테이지로 가시겠습니까?");
 
                     while(true) {
@@ -98,7 +100,11 @@ public class Game {
                             return;
                         }
                         break;
-                    } else{
+
+                    } else if (stagechoice == 7) {
+                        System.out.println("야영지로 돌아갑니다.");
+                        break;
+                    }else{
                         System.out.println("올바른 스테이지 번호를 입력해 주십시오.");
                     }
 
