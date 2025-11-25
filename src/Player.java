@@ -148,6 +148,9 @@ public class Player extends Character {
 this.fightattack = this.fightattack * 1.3;
 
 }
+void useHigherStrongPotion(){
+this.fightattack = this.fightattack*1.6;
+}
 
 void getGold(int gold){
 
@@ -159,6 +162,10 @@ this.gold += gold;
 
 void useHpPotion(){
 this.hp += this.fullhp*0.5;
+}
+
+void useHigherHpPotion() {
+this.hp+= this.fullhp*0.8;
 }
 
     void getExperience(int exp) {

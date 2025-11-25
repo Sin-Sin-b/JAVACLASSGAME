@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Blacksmith extends Npc{
 
 Blacksmith(){
-super("대장장이 스미스");
+super("대장장이 스미스의 잔영");
 
 }
     public void devilStoneUse(Game game) {

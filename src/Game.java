@@ -303,7 +303,6 @@ public class Game {
             System.out.println(monster2.name + "가 생성되었습니다.");
 
 
-            Random random = new Random();
 
             while (player.hp > 0) {
                 System.out.println(player.name + "의 체력 : " + player.hp);
@@ -465,13 +464,26 @@ public class Game {
                                 Item select = usableItems.get(battlechoice3 - 1);
 
                                 if (select.type.equals("강화")) {
+                                if(select.price==30){
+                                    player.useHigherStrongPotion();
+                                    System.out.println("플레이어의 현재 공격력이 " + player.fightattack + "가 되었습니다.");
+                                    System.out.println("--------------------");
+                                }else {
                                     player.useStrongPotion();
                                     System.out.println("플레이어의 현재 공격력이 " + player.fightattack + "가 되었습니다.");
                                     System.out.println("--------------------");
+                                }
                                 } else {
-                                    player.useHpPotion();
-                                    System.out.println("플레이어의 현재 체력이 " + player.hp + "가 되었습니다.");
-                                    System.out.println("--------------------");
+                                    if(select.price==30){
+                                        player.useHigherHpPotion();
+                                        System.out.println("플레이어의 현재 체력이 " + player.hp + "가 되었습니다.");
+                                        System.out.println("--------------------");
+                                    }else {
+                                        player.useHpPotion();
+                                        System.out.println("플레이어의 현재 체력이 " + player.hp + "가 되었습니다.");
+                                        System.out.println("--------------------");
+                                    }
+
                                 }
 
 
@@ -557,7 +569,6 @@ public class Game {
             System.out.println(monster2.name + "가 생성되었습니다.");
 
 
-            Random random = new Random();
 
             while (player.hp > 0) {
                 System.out.println("플레이어의 체력 : " + player.hp);
@@ -783,8 +794,6 @@ public class Game {
             System.out.println(monster1.name + "이 생성되었습니다.");
 
 
-            Random random = new Random();
-
             while (player.hp > 0) {
                 System.out.println("플레이어의 체력 : " + player.hp);
                 System.out.println(monster1. name + "의 체력 : " + monster1.hp);
@@ -962,7 +971,6 @@ public class Game {
             System.out.println(monster2.name + "가 생성되었습니다.");
 
 
-            Random random = new Random();
 
             while (player.hp > 0) {
                 System.out.println("플레이어의 체력 : " + player.hp);
@@ -1187,8 +1195,6 @@ public class Game {
             System.out.println(monster1.name + "이 생성되었습니다.");
 
 
-            Random random = new Random();
-
             while (player.hp > 0) {
                 System.out.println("플레이어의 체력 : " + player.hp);
                 System.out.println(monster1.name  + "의 체력 : " + monster1.hp);
@@ -1366,7 +1372,6 @@ public class Game {
             System.out.println(monster1.name + "이 생성되었습니다.");
 
 
-            Random random = new Random();
 
             while (player.hp > 0) {
                 System.out.println("플레이어의 체력 : " + player.hp);

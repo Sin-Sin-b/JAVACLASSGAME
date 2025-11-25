@@ -16,6 +16,14 @@ public class ItemList {
         return new Equipment("가죽 헬멧", "짜임새 좋은 가죽헬멧이다. 체력을 +30 늘려준다.", 20,30,"전사");
     }
 
+    Item getHigherHealPotion(){
+        return new Consumable("상급 회복 포션", "본인의 체력을 최대체력의 80% 회복한다", 30, "회복", 0, 0.8);
+    }
+
+    Item getHIgherStrPotion(){
+        return new Consumable("상급 힘의 포션", "본인의 공격력을 60% 올려주는 포션이다", 30, "강화", 0, 0.6);
+    }
+
     Item getSteelArmor() {
         return new Equipment("강철 갑옷", "튼튼한 강철 갑옷이다. 체력을 +50 늘려준다.", 30, 50,"전사");
     }
