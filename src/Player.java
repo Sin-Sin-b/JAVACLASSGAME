@@ -161,11 +161,21 @@ this.gold += gold;
 }
 
 void useHpPotion(){
+
 this.hp += this.fullhp*0.5;
+
+    if (this.hp>this.fullhp){
+        this.hp =this.fullhp;
+    }
 }
 
 void useHigherHpPotion() {
 this.hp+= this.fullhp*0.8;
+
+if (this.hp>this.fullhp){
+    this.hp =this.fullhp;
+}
+
 }
 
     void getExperience(int exp) {
