@@ -37,7 +37,7 @@ public class Monsterlist {
     Monster highoakleader() {
 
         Monster m = new BossMonster("하이오크 장군", "중간보스", 40, 145, 3, 200);
-        m.addSkill(ms.downStrike());
+        m.addSkill(ms.strongDownStrike());
         m.addSkill(ms.earthShatter());
         return m;
     }

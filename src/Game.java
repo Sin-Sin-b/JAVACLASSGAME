@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import java.util.Random;
 import java.util.ArrayList;
 
 public class Game {
@@ -8,7 +7,6 @@ public class Game {
     ItemList itemlist;
     StageList stagelist;
     Scanner scanner = new Scanner(System.in);
-    Skill selectSkill;
     Monsterlist monsterlist;
     Shopkeeper shopkeeper;
     Blacksmith blacksmith;
@@ -221,7 +219,7 @@ public class Game {
             System.out.println((i + 1) + ". " + item.name + " (체력 +" + ((Equipment) item).addedHp + ")");
         }
         System.out.println("0. 취소");
-        System.out.print("선택: ");
+        System.out.println("선택: ");
 
         int choice = scanner.nextInt();
 
@@ -1521,7 +1519,7 @@ public class Game {
                     System.out.println("언데드 왕이 기분 나쁜 비명과 함께 육중한 소리를 내며 무너집니다.");
                     System.out.println("왕을 지탱하던 불길한 어둠의 마력이 폭풍처럼 휘몰아치다... 이내 잠잠해집니다.");
                     System.out.println();
-                    System.out.println("9층 대표이사 집무실의 거대한 창 밖으로,");
+                    System.out.println("9층의 거대한 창 밖으로,");
                     System.out.println("어둠에 가려져 있던 도시의 햇살이 눈부시게 비추기 시작합니다.");
                     System.out.println();
                     System.out.println("4층부터 9층까지, 이 건물을 뒤덮었던 모든 마물들이 먼지가 되어 소멸합니다.");

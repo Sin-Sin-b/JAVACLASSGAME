@@ -5,7 +5,7 @@ public class ItemList {
     }
 
     Item getHealPotion() {
-        return new Consumable("회복 포션", "본인의 체력을 최대체력의 50% 회복한다", 10, "회복", 0, 0.2);
+        return new Consumable("회복 포션", "본인의 체력을 최대체력의 50% 회복한다", 10, "회복", 0, 0.5);
     }
 
     Item getLeatherArmor() {
